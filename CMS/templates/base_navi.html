@@ -5,7 +5,7 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
@@ -28,12 +28,12 @@
             <ul class="nav navbar-nav">
                 <li class="">
                     <a href="{% url 'callcentre:callcentre_home' %}">
-                        <span class="fas fa-address-book"></span>&nbsp; Call Centre
+                        <span class="fas fa-phone"></span>&nbsp; Call Centre
                     </a>
                 </li>
                 <li class="">
                     <a href="{% url 'department:department_home' %}">
-                        <span class="fas fa-address-card" aria-hidden="true"></span>&nbsp; Department
+                        <span class="far fa-building" aria-hidden="true"></span>&nbsp; Department
                     </a>
                 </li>
             </ul>
