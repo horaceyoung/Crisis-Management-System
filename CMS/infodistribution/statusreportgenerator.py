@@ -1,10 +1,10 @@
-from . import messageDistro as md
+from .messageDistro import distributeMessage
 from threading import Timer
 from datetime import datetime
 
 class StatusReportGenerator():
     def __init__(self, recipient):
-        self.distro = md.distributeMessage
+        self.distro = distributeMessage
         self.prime_minister_adress = 'lee.hsien.loong@gmail.com'
         # Todo: initialisera statistik
 

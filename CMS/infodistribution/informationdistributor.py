@@ -1,22 +1,32 @@
-import utilities.IncidentStatus
-from . import statusreportgenerator as srg
+from utilities.incidentstatus import IncidentStatus
+from .statusreportgenerator import StatusReportGenerator
 
 
 class InformationDistributor:
+    """
+    Distributes messages to the appropriate component of the subsystem
+    for information distribution.
+    """
+
     def __init__(self):
-        # Only incidents with the status NEW shall be dispatched
+        # Todo: include all components as observers
+        """
+        Only incidents with the status NEW shall be dispatched to a department.
+        """
         self.new_incident_observers = []
 
-        self.incident_status_observers = [srg.StatusReportGenerator]
+        """
+        All incident status updates shall be included in status reports and
+        alerts to social medias.
+        """
+        self.incident_status_observers = [StatusReportGenerator]
 
-    def register_observer(self, observer, only_new_incidents):
-        if only_new_incidents:
-            self.new_incident_observers.append(observer)
-        else:
-            self.incident_status_observers.append(observer)
 
-    def notify_observers(self, message):
-        if message.incident_status == utilities.IncidentStatus.NEW:
+    def distribute(self, message):
+        """
+        Distributes the given message to all observers of that Incident Status.
+        """
+        if message.incident_status == IncidentStatus.NEW:
             for observer in self.new_incident_observers:
                 observer.notify(message)
 
