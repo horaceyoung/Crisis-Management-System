@@ -13,15 +13,16 @@ class InformationDistributor:
 
     def __init__(self):
         """
-        Only incidents with the status NEW shall be dispatched to a department.
+        Only incidents with the status NEW shall be dispatched to a department
+        and needs to be notified to the status report generator.
         """
-        self.new_incident_observers = [Dispatcher()]
+        self.new_incident_observers = [Dispatcher(),
+                                       StatusReportGenerator(1800.0)]
 
         """
-        All incident status updates shall be included in status reports and
-        alerts to social medias.
+        All incident status updates shall be included in social medias alerts.
         """
-        self.incident_status_observers = [StatusReportGenerator(), SocialMediaAlerter()]
+        self.incident_status_observers = [SocialMediaAlerter()]
 
 
     def distribute(self, message):
