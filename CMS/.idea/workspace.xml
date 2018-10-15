@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ebdf41c-c5a1-4ec5-86a3-b29600d68fd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/infodistribution/incidentsubject.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infodistribution/statusreportgenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/incidentstatus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/infodistribution/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/infodistribution/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department/messageDistro.py" beforeDir="false" afterPath="$PROJECT_DIR$/infodistribution/messageDistro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/infodistribution/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/infodistribution/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/infodistribution/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/department/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/infodistribution/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="9ebdf41c-c5a1-4ec5-86a3-b29600d68fd4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +49,7 @@
     <session id="-884249226">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="2" />
@@ -106,8 +89,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/infodistribution/incidentsubject.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+            <state relative-caret-position="360">
+              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
                 <marker date="1539570331664" expanded="true" signature="370:375" ph="..." />
@@ -331,6 +314,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16738197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -572,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/infodistribution/incidentsubject.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+        <state relative-caret-position="360">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
             <marker date="1539570331664" expanded="true" signature="370:375" ph="..." />
