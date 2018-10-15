@@ -1,7 +1,7 @@
 from .messageDistro import distributeMessage
 
 
-class dispatcherAlert:
+class Dispatcher:
     def __init__(self):
         self.distro = distributeMessage
 

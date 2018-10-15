@@ -1,7 +1,7 @@
 from .messageDistro import distributeMessage
 
 
-class socialmediaAlert:
+class SocialMediaAlerter:
     def __init__(self):
         self.distro = distributeMessage
 

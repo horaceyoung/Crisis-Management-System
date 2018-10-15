@@ -1,5 +1,8 @@
 from utilities.incidentstatus import IncidentStatus
 from .statusreportgenerator import StatusReportGenerator
+from .socialmediaalerter import SocialMediaAlerter
+from .dispatcher import Dispatcher
+
 
 
 class InformationDistributor:
@@ -9,17 +12,16 @@ class InformationDistributor:
     """
 
     def __init__(self):
-        # Todo: include all components as observers
         """
         Only incidents with the status NEW shall be dispatched to a department.
         """
-        self.new_incident_observers = []
+        self.new_incident_observers = [Dispatcher()]
 
         """
         All incident status updates shall be included in status reports and
         alerts to social medias.
         """
-        self.incident_status_observers = [StatusReportGenerator]
+        self.incident_status_observers = [StatusReportGenerator(), SocialMediaAlerter()]
 
 
     def distribute(self, message):
