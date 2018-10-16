@@ -1,14 +1,13 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
-<h1>Here lists all the resolved incidents</h1>
+<h1>Here list all the resolved incidents</h1>
 <table style="width:100%">
   <tr>
     <th>Incident ID</th>
     <th>Type</th>
     <th>Time</th>
     <th>Location</th>
-    <th>Status</th>
     <th>Department</th>
   </tr>
  {% for incident in incident_history %}
