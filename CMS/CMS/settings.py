@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # register all the apps
     'map',
     'callcentre',
-    'department',
+    'infodistribution',
 ]
 
 MIDDLEWARE = [
