@@ -2,4 +2,25 @@
 
 {% block body %}
 <h1>Call Centre Homepage</h1>
+<table style="width:100%">
+  <tr>
+    <th>Incident ID</th>
+    <th>Type</th>
+    <th>Time</th>
+    <th>Location</th>
+    <th>Status</th>
+    <th>Department</th>
+  </tr>
+ {% for incident in all_incidents %}
+  <tr>
+    <td>{{ incident.id }}</td>
+    <td>{{ incident.incident_category }}</td>
+    <td>{{ incident.incident_time }}</td>
+    <td>{{ incident.incident_location }}</td>
+    <td>{{ incident.incident_status }}</td>
+    <td>{{ incident.incident_department }}</td>
+  </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}
