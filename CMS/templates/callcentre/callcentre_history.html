@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base_navi.html' %}
 
-</body>
-</html>
+{% block body %}
+<h1>Here list all the resolved incidents</h1>
+<table style="width:100%">
+  <tr>
+    <th>Incident ID</th>
+    <th>Type</th>
+    <th>Time</th>
+    <th>Location</th>
+    <th>Department</th>
+  </tr>
+ {% for incident in incident_history %}
+  <tr>
+    <td>{{ incident.id }}</td>
+    <td>{{ incident.incident_category }}</td>
+    <td>{{ incident.incident_time }}</td>
+    <td>{{ incident.incident_location }}</td>
+    <td>{{ incident.incident_department }}</td>
+  </tr>
+    {% endfor %}
+</table>
+{% endblock %}
