@@ -1,0 +1,14 @@
+{% extends 'base_navi.html' %}
+
+{% block body %}
+<h1>Create a New Incident</h1>
+  <form action="/message/" method="POST">
+    {% for field in form %} 
+    <div class="fieldWrapper">
+     {{ field.label_tag }}:{{ field }} {{ field.errors }} 
+    </div>
+    {% endfor %} 
+
+    <a class="btn btn-default" href="{% url 'callcentre:callcentre_home' %}" role="button">Submit</a>
+  </form>
+{% endblock %}
