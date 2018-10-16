@@ -9,17 +9,3 @@ class distributeMessage:
     def sendTweet(self,tweet):
         print("Tweet sent")
         #twitterAPI send tweet(self.tweet)
-
-class dispatcherAlert:
-    def __init__(self,message):
-        distro = distributeMessage
-        #organise message to be fit for sms
-        distro.sendSMS(message)
-        del distro
-
-class socialmediaAlert:
-    def __init__(self,message):
-        distro = distributeMessage
-        #organise message to be fit for twitter
-        distro.sendTweet(message)
-        del distro
