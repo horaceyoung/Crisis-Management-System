@@ -6,6 +6,8 @@ from utilities.region import Region
 
 
 class Incident(models.Model):
+    caller_name = models.CharField(max_length=50)
+    mobile_number = models.CharField(max_length=8)
     incident_time = models.DateTimeField()
     incident_location = models.CharField(max_length=100)
     incident_region = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in Region])
