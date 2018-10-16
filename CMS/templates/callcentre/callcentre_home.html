@@ -12,17 +12,17 @@
     <th>Status</th>
     <th>Department</th>
   </tr>
- {% for incident in all_incidents %}
+ {% for incident in all_unsolved_incidents %}
   <tr>
     <td>{{ incident.id }}</td>
     <td>{{ incident.incident_category }}</td>
     <td>{{ incident.incident_time }}</td>
     <td>{{ incident.incident_location }}</td>
-    <td>{{ incident.incident_status }}</td>
+      <td><a href="#">{{ incident.incident_status }}</a></td>
     <td>{{ incident.incident_department }}</td>
   </tr>
     {% endfor %}
 </table>
 <a class="btn btn-default" href="#" role="button">Create incidents</a>
-<a class="btn btn-default" href="#" role="button">History</a>
+<a class="btn btn-default" href="{% url 'callcentre:callcentre_history' %}" role="button">History</a>
 {% endblock %}
