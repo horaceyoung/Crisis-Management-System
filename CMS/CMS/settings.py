@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     # register all the apps
     'map',
     'callcentre',
-    'infodistribution',
     'incidentCreation',
 ]
 
