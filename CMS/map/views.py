@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import FormView
 
+from map.form import LocationForm
 
-def map_home(request):
-    return render(request, 'map/map_home.html')
+class LocationFormView(FormView):
+    form_class = LocationForm
+    template_name = "map/map_home.html"
