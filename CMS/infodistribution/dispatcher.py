@@ -6,11 +6,13 @@ from callcentre.models import Incident
 
 class Dispatcher:
     def __init__(self):
+        self.messages_received = 0
         self.distro = distributeMessage()
         self.singapore_power_phone = "1234567"
         self.SCDF_phone = "7654321"
     
     def notify(self, message):
+        self.messages_received += 1
         incident = Incident.objects.get(pk=message.incident_id)
         # organise message to be fit for sms
         self.distro.sendSMS(self.generate_sms(incident))

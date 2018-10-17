@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'map',
     'callcentre',
     'incidentCreation',
+    'django_google_maps'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+GOOGLE_MAPS_API_KEY = 'AIzaSyAXUpsuvol5jJ2g5HgZ3ppw55UMyL-_5W8'
