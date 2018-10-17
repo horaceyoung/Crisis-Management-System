@@ -9,4 +9,5 @@ urlpatterns = [
     path('department/', include('department.urls', namespace='department')),
     path('statustrack/', include('statusTrack.urls', namespace='statustrack')),
     path('infodistribution/', include('infodistribution.urls', namespace='infodistribution')),
+    path('incidentCreation/', include('incidentCreation.urls', namespace='incidentCreation')),
 ]

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'map',
     'callcentre',
     'infodistribution',
+    'incidentCreation',
 ]
 
 MIDDLEWARE = [
