@@ -13,7 +13,7 @@ function sumbit_sure(){
 
 {% block body %}
 <h1>Create a New Incident</h1>
-  <form action="/incidentCreation/" method="GET" onsubmit="return sumbit_sure()">{% csrf_token %}
+  <form action="/callcentre/" method="GET" onsubmit="return sumbit_sure()">{% csrf_token %}
     {% for field in form %} 
     <div class="fieldWrapper">
      {{ field.label_tag }}:{{ field }} {{ field.errors }} 
