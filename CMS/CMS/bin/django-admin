@@ -1,6 +1,4 @@
-#!/Users/ZhangYuehan/Documents/GitHub/8Pax_CZ3003GroupProject/CMS/CMS/bin/python3.7
 
-# -*- coding: utf-8 -*-
 import re
 import sys
 
