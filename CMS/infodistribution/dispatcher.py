@@ -9,14 +9,17 @@ class Dispatcher:
         self.distro = distributeMessage()
         self.singapore_power_phone = "1234567"
         self.SCDF_phone = "7654321"
-        self.sms = "test sms"
     
     def notify(self, message):
         incident = Incident.objects.get(pk=message.incident_id)
-        if IncidentType == "Gas Leak Control":
-            self.distro.sendSMS(self.sms, self.singapore_power_phone)
+        # organise message to be fit for sms
+        self.distro.sendSMS(self.generate_sms(incident))
+
+    def generate_sms(self, incident):
+        sms = "Test sms"
+
+        if incident.incident_category == "Gas Leak Control":
+            self.distro.sendSMS(sms, self.singapore_power_phone)
         else:
-            self.distro.sendSMS(self.sms, self.SCDF_phone)
-
-
+            self.distro.sendSMS(sms, self.SCDF_phone)
 
