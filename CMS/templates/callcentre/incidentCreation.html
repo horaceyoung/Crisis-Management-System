@@ -1,14 +1,24 @@
 {% extends 'base_navi.html' %}
 
+<script>
+function sumbit_sure(){
+	var gnl=confirm("Confirm to submit a new record?");
+	if (gnl==true){
+		return true;
+	} else{
+		return false;
+	}
+}
+</script>
+
 {% block body %}
 <h1>Create a New Incident</h1>
-  <form action="/message/" method="POST">
+  <form action="/callcentre/" method="GET" onsubmit="return sumbit_sure()">{% csrf_token %}
     {% for field in form %} 
     <div class="fieldWrapper">
      {{ field.label_tag }}:{{ field }} {{ field.errors }} 
     </div>
     {% endfor %} 
-
-    <a class="btn btn-default" href="{% url 'callcentre:callcentre_home' %}" role="button">Submit</a>
+     <p><input type="submit" value="Submit" />
   </form>
 {% endblock %}
