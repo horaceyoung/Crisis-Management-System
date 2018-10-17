@@ -41,8 +41,13 @@ INSTALLED_APPS = [
     # register all the apps
     'map',
     'callcentre',
+<<<<<<< HEAD
     'department',
     'mapwidgets',
+=======
+    'infodistribution',
+    'incidentCreation',
+>>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
 ]
 
 MAP_WIDGETS = {
