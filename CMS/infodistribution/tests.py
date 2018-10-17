@@ -18,14 +18,14 @@ class InformationDistributorTest(TestCase):
         incident1.save()
         self.message = Message(incident1.id, incident1.incident_status)
 
-    def test_message_receivement(self):
+    def test_message_received(self):
         infodist = InformationDistributor()
         infodist.distribute(self.message)
 
         for observer in infodist.observers:
             self.assertEqual(1, observer.messages_received, 'Component should have received exactly 1 message')
 
-
+"""
 class KeyIndicatorsTest(TestCase):
     def setUp(self):
         incident1 = Incident(incident_time=datetime.now(),
@@ -35,3 +35,4 @@ class KeyIndicatorsTest(TestCase):
         incident1.save()
         message1 = Message(incident1.id, incident1.incident_status)
         print(message1.incident_status)
+"""
