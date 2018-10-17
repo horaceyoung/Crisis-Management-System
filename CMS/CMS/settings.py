@@ -37,11 +37,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     # register all the apps
     'map',
     'callcentre',
     'department',
+    'mapwidgets',
 ]
+
+MAP_WIDGETS = {
+    "GooglePointFieldWidget": (
+        ("zoom", 15),
+        ("mapCenterLocationName", "london"),
+        ("GooglePlaceAutocompleteOptions", {'componentRestrictions': {'country': 'uk'}}),
+        ("markerFitZoom", 12),
+    ),
+    "GOOGLE_MAP_API_KEY": "<google-api-key>"
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
