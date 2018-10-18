@@ -1,12 +1,62 @@
 {% extends 'base_navi.html' %}
 {% block body %}
+<h2 id="test">Category</h2>
+<select id="category" onchange="location.reload()">
+    <option value="Emergency Situations" >--------Emergency Situations--------</option>
+
+    <option value="Natural Hazards">----Natural Hazards----</option>
+    <option value="Fire">Fire</option>
+    <option value="Haze">Haze</option>
+    <option value="Tsunami">Tsunami</option>
+    <option value="Typhoon">Typhoon</option>
+    <option value="Earthquake">Earthquake</option>
+    <option value="Earthquake aftershocks">Earthquake Aftershocks</option>
+
+    <option value="Epidemic">----Epidemic----</option>
+    <option value="Dengue">Dengue</option>
+    <option value="HIV/AIDS">HIV/AIDS</option>
+    <option value="Bird-flu">Bird-flu</option>
+    <option value="Zika">Zika</option>
+
+    <option value="Traffic Accidents">----Traffic Accidents----</option>
+    <option value="Single Car Accidents">Single Car Accidents</option>
+    <option value="Two Car Collisions">Two Car Collisions</option>
+    <option value="Multiple Vehicle Pile-up">Multiple Vehicle Pile-up</option>
+
+    <option value="Incidents within Crowded Areas">----Incidents within Crowded Areas----</option>
+    <option value="Terrorist Attacks">Terrorist Attacks</option>
+    <option value="Mass Shooting">Mass Shooting</option>
+
+    <option value="Other Useful Information">--------Other Useful Information--------</option>
+
+    <option value="Weather">Weather</option>
+    <option value="Civil Defense Shelters">Civil Defense Shelters</option>
+</select>
+<br>
+<br>
 <script>
-    var locationlist = []
+    var locationlist = [];
+
+
+    $(document).ready(function(){
+        var selected_val = localStorage.getItem("category");
+        $("#category").val(selected_val);
+    $("#category").change(function(){
+        var selected = $("#category").val();
+        localStorage.setItem("category", selected);
+        $(this).closest('form').trigger('submit');
+        });
+    });
+    var categories = document.getElementById("category");
+    var category = localStorage.getItem("category");
+    //var category = categories.options[categories.selectedIndex].value;
+    document.getElementById("test").textContent = String(category);
+
 </script>
+
 {% for location in locations %}
 <script> locationlist.push("{{location.test}}") </script>
 {% endfor %}
-<h1>Map Homepage</h1>
 <body>
 {{form.media}}
 </body>
