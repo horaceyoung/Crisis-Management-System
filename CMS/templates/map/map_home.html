@@ -1,6 +1,11 @@
 {% extends 'base_navi.html' %}
-
 {% block body %}
+<script>
+    var locationlist = []
+</script>
+{% for location in locations %}
+<script> locationlist.push("{{location.test}}") </script>
+{% endfor %}
 <h1>Map Homepage</h1>
 <body>
 {{form.media}}

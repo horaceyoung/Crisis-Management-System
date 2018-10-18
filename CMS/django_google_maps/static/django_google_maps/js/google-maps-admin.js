@@ -1,4 +1,3 @@
-
 /*
 Integration for Google Maps in the django admin.
 
@@ -20,6 +19,8 @@ This script expects:
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
 */
+//var locations = ['Jurong', 'NTU', 'NUS', 'Changi', 'Bishan', 'Yishun'];
+
 
 function googleMapAdmin() {
 
@@ -46,23 +47,18 @@ function googleMapAdmin() {
                 zoom = 18;
             }
 
-           var latlng = new google.maps.LatLng(1.290,103.852);
+           var latlng = new google.maps.LatLng(1.3607287,103.8125215);
 
             var myOptions = {
-              zoom: 12,
+              zoom: 11.5,
               center: latlng,
               mapTypeId: self.getMapType()
             };
-
+            self.setMarker(latlng);
             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-            if (!existinglocation) {
-                self.setMarker(latlng);
-                self.setMarker(new google.maps.LatLng(1.3, 103.9));
-            }
-
             autocomplete = new google.maps.places.Autocomplete(
-                /** @type {!HTMLInputElement} */(document.getElementById(addressId)),
-                {types: ['geocode']});
+            /** @type {!HTMLInputElement} */(document.getElementById(addressId)),
+            {types: ['geocode']});
 
             // this only triggers on enter, or if a suggested location is chosen
             // todo: if a user doesn't choose a suggestion and presses tab, the map doesn't update
@@ -76,7 +72,46 @@ function googleMapAdmin() {
                     return false;
                 }
             });
+            //added added added added
+
+            var len = locationlist.length;
+            for (i = 0; i < len; i++){
+                self.codeAddress(locationlist[i]);
+            }
+
+            //if (!existinglocation) {
+                //self.setMarker(latlng);
+            //}
         },
+
+        codeAddress: function(name) {
+                geocoder.geocode({'address': name}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var latlng = results[0].geometry.location;
+                        //self.updateWithCoordinates(latlng);
+                        self.setMarker(latlng);
+                    } else {
+                        alert("Geocode was not successful for the following reason: " + status);
+                    }
+                });
+        },
+        /* codeAddress: function() {
+            var place = autocomplete.getPlace();
+            if(place.geometry !== undefined) {
+                self.updateWithCoordinates(place.geometry.location);
+            }
+            else {
+                geocoder.geocode({'address': place.name}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var latlng = results[0].geometry.location;
+                        //self.updateWithCoordinates(latlng);
+                        self.setMarker(latlng);
+                    } else {
+                        alert("Geocode was not successful for the following reason: " + status);
+                    }
+                });
+            }
+        },*/
 
         getMapType : function() {
             // https://developers.google.com/maps/documentation/javascript/maptypes
@@ -98,24 +133,6 @@ function googleMapAdmin() {
             }
         },
 
-        codeAddress: function() {
-            var place = autocomplete.getPlace();
-
-            if(place.geometry !== undefined) {
-                self.updateWithCoordinates(place.geometry.location);
-            }
-            else {
-                geocoder.geocode({'address': place.name}, function(results, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        var latlng = results[0].geometry.location;
-                        self.updateWithCoordinates(latlng);
-                    } else {
-                        alert("Geocode was not successful for the following reason: " + status);
-                    }
-                });
-            }
-        },
-
         updateWithCoordinates: function(latlng) {
             map.setCenter(latlng);
             map.setZoom(18);
@@ -124,7 +141,6 @@ function googleMapAdmin() {
         },
 
         setMarker: function(latlng) {
-       
                 self.addMarker({'latlng': latlng, 'draggable': true});
         },
 
