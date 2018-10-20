@@ -1,4 +1,4 @@
-from .messageDistro import distributeMessage
+from .informationsender import InformationSender
 from utilities.incidenttype import IncidentType
 from utilities.incidentstatus import IncidentStatus
 from utilities.region import Region
@@ -17,7 +17,7 @@ class StatusReportGenerator:
 
     def __init__(self, interval):
         self.messages_received = 0
-        self.distro = distributeMessage()
+        self.distributor = InformationSender()
         self.interval = interval
         self.prime_minister_address = 'lee.hsien.loong@gmail.com'
         self.prev_key_indicators = KeyIndicators()
@@ -31,8 +31,12 @@ class StatusReportGenerator:
         """
         self.messages_received += 1
         incident = Incident.objects.get(pk=message.incident_id)
+        incident_type = IncidentType.from_str(incident.incident_category)
+        region = Region.from_str(incident.incident_region)
+
         if message.incident_status == IncidentStatus.NEW:
-            self.key_indicators.reported_incidents[incident.incident_category] += 1
+            self.key_indicators.reported_incidents[incident_type] += 1
+            self.key_indicators.affected_regions[region] += 1
         elif message.incident_status == IncidentStatus.RESOLVED:
             self.key_indicators.total_resolution_time +=\
                 datetime.now() - incident.incident_time
@@ -40,7 +44,7 @@ class StatusReportGenerator:
 
     def generate_report(self):
         """
-        Generates a status report based on key indicatorsm, sends it by email to the prime minister and
+        Generates a status report based on key indicators, sends it by email to the prime minister and
         resets key indicators.
         """
         # Schedule next report
@@ -53,7 +57,7 @@ class StatusReportGenerator:
         report += self.key_indicators.trending_incident_type(self.prev_key_indicators) + '\n'
         report += self.key_indicators.trending_region(self.prev_key_indicators)
 
-        self.distro.sendEmail(title, report, self.prime_minister_address)
+        self.distributor.send_email(title, report, self.prime_minister_address)
 
         # Reset key indicators
         self.prev_key_indicators = self.key_indicators
@@ -77,14 +81,14 @@ class KeyIndicators:
         """
         res = 'Number of reported incidents of type'
         for tag in IncidentType:
-            res += '\n\t- ' + tag.value + ': ' + self.key_indicators.reported_incidents[tag] + '.'
+            res += '\n\t- ' + tag.value + ': ' + self.reported_incidents[tag] + '.'
 
     def ongoing_incidents(self):
         """
         Calculates the number of incidents which have not yet been resolved.
         """
         ongoing = sum(self.reported_incidents.values()) - self.resolved_incidents
-        return 'Number of incidents which are still ongoing: ' + ongoing + '.'
+        return 'Number of incidents which are still ongoing: ' + str(ongoing) + '.'
 
     def mean_resolution_time(self):
         """
@@ -97,11 +101,11 @@ class KeyIndicators:
         """
         Calculates the incident type for which the number of reports are currently increasing the most.
         """
-        type, increase = self.__largest_derivative(self.reported_incidents, prev.reported_incidents, IncidentType)
+        incident_type, increase = self.__largest_derivative(self.reported_incidents, prev.reported_incidents, IncidentType)
         if increase == 0:
             return 'The number of reported incidents is not increasing in any category.'
         else:
-            return 'The number of reported incidents in the ' + type.value + ' category are increasing the fastest.'
+            return 'The number of reported incidents in the ' + incident_type.value + ' category are increasing the fastest.'
 
     def trending_region(self, prev):
         """
