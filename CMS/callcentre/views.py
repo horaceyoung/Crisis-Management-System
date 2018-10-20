@@ -3,7 +3,7 @@ from .models import Incident
 
 
 def callcentre_home(request):
-    all_unsolved_incidents = Incident.objects.exclude(incident_status='RESOLVED').order_by('incident_time')
+    all_unsolved_incidents = Incident.objects.exclude(incident_status='RESOLVED').order_by('-incident_time')
     context = {'all_unsolved_incidents' : all_unsolved_incidents }
     return render(request, 'callcentre/callcentre_home.html', context)
 

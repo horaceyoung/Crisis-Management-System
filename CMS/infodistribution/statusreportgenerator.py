@@ -16,6 +16,7 @@ class StatusReportGenerator:
     """
 
     def __init__(self, interval):
+        self.messages_received = 0
         self.distro = distributeMessage()
         self.interval = interval
         self.prime_minister_address = 'lee.hsien.loong@gmail.com'
@@ -28,6 +29,7 @@ class StatusReportGenerator:
         """
         Updates key indicators according to the incident update contained in the given message.
         """
+        self.messages_received += 1
         incident = Incident.objects.get(pk=message.incident_id)
         if message.incident_status == IncidentStatus.NEW:
             self.key_indicators.reported_incidents[incident.incident_category] += 1

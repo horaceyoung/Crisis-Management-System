@@ -42,12 +42,17 @@ INSTALLED_APPS = [
     'map',
     'callcentre',
 <<<<<<< HEAD
+<<<<<<< HEAD
     'department',
     'mapwidgets',
 =======
     'infodistribution',
     'incidentCreation',
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+    'incidentCreation',
+    'django_google_maps'
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
 ]
 
 MAP_WIDGETS = {
@@ -141,3 +146,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+GOOGLE_MAPS_API_KEY = 'AIzaSyAXUpsuvol5jJ2g5HgZ3ppw55UMyL-_5W8'

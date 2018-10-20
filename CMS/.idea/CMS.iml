@@ -7,9 +7,14 @@
 =======
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/venv2" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.7 (CMS)" jdkType="Python SDK" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+    <orderEntry type="jdk" jdkName="Python 3.7 (CMS) (1)" jdkType="Python SDK" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R User Library" level="project" />
     <orderEntry type="library" name="R Skeletons" level="application" />

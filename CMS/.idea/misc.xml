@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5.4 (C:\Users\User\AppData\Local\Programs\Python\Python35\python.exe)" project-jdk-type="Python SDK" />
 =======
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (CMS)" project-jdk-type="Python SDK" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (CMS) (1)" project-jdk-type="Python SDK" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
+  </component>
+  <component name="PythonCompatibilityInspectionAdvertiser">
+    <option name="version" value="3" />
   </component>
 </project>

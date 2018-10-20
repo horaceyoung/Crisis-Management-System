@@ -1,2 +1,4 @@
 *.pyc
 workspace.xml
+inspectionProfiles
+venv3

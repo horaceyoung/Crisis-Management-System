@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="9ebdf41c-c5a1-4ec5-86a3-b29600d68fd4" name="Default Changelist" comment="" />
 =======
     <list default="true" id="9ebdf41c-c5a1-4ec5-86a3-b29600d68fd4" name="Default Changelist" comment="">
@@ -4291,6 +4292,9 @@
 >>>>>>> e1a117cd58a5e32619dfefd31599f1712a0a7f8e
     </list>
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+    <list default="true" id="9ebdf41c-c5a1-4ec5-86a3-b29600d68fd4" name="Default Changelist" comment="" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -4350,63 +4354,82 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-<<<<<<< HEAD
-          <entry key="html" value="4" />
-          <entry key="py" value="19" />
-=======
           <entry key="Makefile" value="1" />
           <entry key="h" value="1" />
           <entry key="html" value="5" />
-<<<<<<< HEAD
-          <entry key="py" value="75" />
-=======
           <entry key="py" value="74" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
->>>>>>> e1a117cd58a5e32619dfefd31599f1712a0a7f8e
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-<<<<<<< HEAD
-          <entry key="HTML" value="4" />
-          <entry key="Python" value="19" />
-=======
           <entry key="C++" value="1" />
           <entry key="HTML" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
-<<<<<<< HEAD
-          <entry key="Python" value="75" />
-=======
           <entry key="Python" value="74" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
->>>>>>> e1a117cd58a5e32619dfefd31599f1712a0a7f8e
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-<<<<<<< HEAD
-          <entry key="html" value="675" />
-          <entry key="py" value="807" />
-=======
           <entry key="html" value="21" />
           <entry key="py" value="359" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-<<<<<<< HEAD
-          <entry key="HTML" value="675" />
-          <entry key="Python" value="807" />
-=======
           <entry key="HTML" value="21" />
           <entry key="Python" value="359" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-513975147">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="910778000">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
@@ -4436,15 +4459,22 @@
             <state relative-caret-position="87">
               <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
 =======
+=======
+    <leaf>
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/callcentre/models.py">
+        <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_history.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
+<<<<<<< HEAD
               <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="19" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+=======
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </state>
           </provider>
         </entry>
@@ -4467,13 +4497,18 @@
               <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
 =======
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_home.html">
+        <entry file="file://$PROJECT_DIR$/callcentre/views.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="405">
               <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="14" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+            <state relative-caret-position="180">
+              <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
               <folding>
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -4489,8 +4524,9 @@
                 <element signature="e#0#28#0" expanded="true" />
 =======
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/callcentre/views.py">
+        <entry file="file://$PROJECT_DIR$/callcentre/urls.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="180">
               <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
               <folding>
@@ -4498,6 +4534,10 @@
                 <marker date="1539702244057" expanded="true" signature="350:555" ph="..." />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
               </folding>
+=======
+            <state relative-caret-position="90">
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </state>
           </provider>
         </entry>
@@ -4511,8 +4551,24 @@
               <folding />
 =======
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_history.html">
+        <entry file="file://$PROJECT_DIR$/callcentre/migrations/0001_initial.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/callcentre/migrations/0006_auto_20181016_1345.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/statusTrack/tests.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_home.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="345">
               <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding>
@@ -4530,6 +4586,10 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+=======
+            <state relative-caret-position="390">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </state>
           </provider>
         </entry>
@@ -4542,19 +4602,24 @@
               <folding />
 =======
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/callcentre/urls.py">
+        <entry file="file://$PROJECT_DIR$/CMS/urls.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="90">
               <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-=======
-    <leaf />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -4585,12 +4650,8 @@
         <option value="$PROJECT_DIR$/templates/callcentre/callcentre_home.html" />
         <option value="$PROJECT_DIR$/map/views.py" />
         <option value="$PROJECT_DIR$/department/views.py" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/department/urls.py" />
         <option value="$PROJECT_DIR$/CMS/urls.py" />
-=======
-        <option value="$PROJECT_DIR$/callcentre/views.py" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
         <option value="$PROJECT_DIR$/map/urls.py" />
         <option value="$PROJECT_DIR$/templates/department/department_home.html" />
         <option value="$PROJECT_DIR$/templates/base_navi.html" />
@@ -4599,11 +4660,14 @@
         <option value="$PROJECT_DIR$/CMS/admin.py" />
         <option value="$PROJECT_DIR$/callcentre/admin.py" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/templates/map/map_home.html" />
         <option value="$PROJECT_DIR$/map/admin.py" />
         <option value="$PROJECT_DIR$/CMS/settings.py" />
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
         <option value="$PROJECT_DIR$/templates/department/department_home.html" />
         <option value="$PROJECT_DIR$/department/test.py" />
         <option value="$PROJECT_DIR$/utilities/emergencystatus.py" />
@@ -4622,7 +4686,6 @@
         <option value="$PROJECT_DIR$/templates/callcentre/callcentre_home.html" />
         <option value="$PROJECT_DIR$/templates/callcentre/callcentre_history.html" />
         <option value="$PROJECT_DIR$/callcentre/urls.py" />
-=======
         <option value="$PROJECT_DIR$/callcentre/urls.py" />
         <option value="$PROJECT_DIR$/department/urls.py" />
         <option value="$PROJECT_DIR$/CMS/CMS/CMS/urls.py" />
@@ -4633,10 +4696,20 @@
         <option value="$PROJECT_DIR$/statusTrack/views.py" />
         <option value="$PROJECT_DIR$/templates/statustrack/statustrack_home.html" />
         <option value="$PROJECT_DIR$/CMS/urls.py" />
+<<<<<<< HEAD
 >>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+        <option value="$PROJECT_DIR$/callcentre/views.py" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
 <<<<<<< HEAD
@@ -4667,7 +4740,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -4684,37 +4756,62 @@
               <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
 <<<<<<< HEAD
+<<<<<<< HEAD
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="callcentre" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </path>
             <path>
               <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="department" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="statusTrack" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </path>
             <path>
               <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="map" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </path>
             <path>
               <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+              <item name="callcentre" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </path>
             <path>
               <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="map" type="462c0819:PsiDirectoryNode" />
 =======
               <item name="infodistribution" type="462c0819:PsiDirectoryNode" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+              <item name="utilities" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
+=======
+      <pane id="Scope" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4759,6 +4856,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -4797,6 +4895,7 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="198" y="129" width="1660" height="934" extended-state="0" />
     <editor active="true" />
     <layout>
@@ -4823,18 +4922,12 @@
     <frame x="303" y="23" width="1083" height="809" extended-state="0" />
 =======
 <<<<<<< HEAD
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17338218" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
 =======
-    <frame x="376" y="40" width="1083" height="809" extended-state="0" />
->>>>>>> e1a117cd58a5e32619dfefd31599f1712a0a7f8e
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24952918" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Structure" order="1" weight="0.24952918" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49811676" weight="0.32914925" />
@@ -4842,29 +4935,23 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49905837" weight="0.39888424" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2857143" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32771084" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-=======
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49435028" weight="0.32914925" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49811676" weight="0.32914925" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49246705" visible="true" weight="0.32914925" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50753295" side_tool="true" visible="true" weight="0.32914925" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4915254" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5084746" side_tool="true" visible="true" weight="0.32914925" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32914925" />
       <window_info anchor="bottom" x="50" y="336" width="1062" height="182" id="Thumbnails" order="11" show_stripe_button="false" type="WINDOWED" weight="0.25383544" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -4967,8 +5054,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/callcentre/templates/callcentre_home.html" />
-    <entry file="file://$PROJECT_DIR$/map/templates/map_home.html" />
     <entry file="file://$PROJECT_DIR$/department/templates/department_home.html" />
     <entry file="file://$PROJECT_DIR$/CMS/settings.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -4984,20 +5069,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/include/python3.7m/abstract.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1651">
-          <caret line="459" column="5" selection-start-line="459" selection-start-column="5" selection-end-line="459" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/config-3.7m-darwin/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="512" column="8" selection-start-line="512" selection-start-column="8" selection-end-line="512" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/include/python3.7m/abstract.h" />
+    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/config-3.7m-darwin/Makefile" />
     <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/__future__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -5005,25 +5078,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/_bootstrap.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/_bootstrap_external.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/abc.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/_bootstrap.py" />
+    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/_bootstrap_external.py" />
+    <entry file="file://$PROJECT_DIR$/CMS/lib/python3.7/importlib/abc.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/tokenize.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1677">
@@ -5069,6 +5127,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/callcentre/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -5084,6 +5143,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
     <entry file="file://$PROJECT_DIR$/callcentre/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -5158,27 +5219,10 @@
     <entry file="file://$PROJECT_DIR$/map/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/department/tests.py" />
-=======
-    <entry file="file://$PROJECT_DIR$/department/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/callcentre/migrations/0004_auto_20181016_0746.py">
-      <provider selected="true" editor-type-id="text-editor" />
-=======
->>>>>>> e1a117cd58a5e32619dfefd31599f1712a0a7f8e
+    <entry file="file://$PROJECT_DIR$/callcentre/migrations/0004_auto_20181016_0746.py" />
     <entry file="file://$PROJECT_DIR$/statusTrack/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/map/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -5188,14 +5232,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/department/urls.py" />
-    <entry file="file://$PROJECT_DIR$/callcentre/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
-    </entry>
     <entry file="file://$PROJECT_DIR$/statusTrack/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -5247,9 +5283,7 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/callcentre/models.py">
-=======
+    <entry file="file://$PROJECT_DIR$/callcentre/models.py" />
     <entry file="file://$PROJECT_DIR$/templates/statustrack/statustrack_home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -5258,7 +5292,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/map/map_home.html">
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
@@ -5272,8 +5305,8 @@
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/department/views.py" />
+<<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/department/views.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -5319,26 +5352,36 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
 =======
+=======
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
     <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/callcentre/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
->>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+        <state relative-caret-position="240">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_home.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="90">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+>>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
+=======
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/department/department_home.html" />
+    <entry file="file://$PROJECT_DIR$/department/messageDistro.py" />
+    <entry file="file://$PROJECT_DIR$/map/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="87">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
@@ -5350,13 +5393,17 @@
           <folding>
             <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
 >>>>>>> 0d997eb30b0e86b047d2227d91459feb03ab9572
-          </folding>
 =======
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
+          </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/map/admin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -5407,25 +5454,9 @@
 =======
 >>>>>>> e1a117cd58a5e32619dfefd31599f1712a0a7f8e
     <entry file="file://$PROJECT_DIR$/templates/department/department_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="14" />
->>>>>>> 94ca2ef07000eb248f87903a561a4c397d6e4b93
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/department/messageDistro.py" />
-    <entry file="file://$PROJECT_DIR$/map/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/infodistribution/statusreportgenerator.py">
+>>>>>>> 80e9cda4286f94a0c995bc660210e02980d9a91c
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
@@ -5434,6 +5465,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/infodistribution/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="600" column="10" selection-start-line="600" selection-start-column="10" selection-end-line="600" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/callcentre/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/callcentre/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
