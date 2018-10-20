@@ -16,7 +16,7 @@ class Dispatcher:
         self.messages_received += 1
         incident = Incident.objects.get(pk=message.incident_id)
         # organise message to be fit for sms
-        self.distro.sendSMS(self.generate_sms(incident))
+        self.generate_sms(incident)
 
     def generate_sms(self, incident):
         sms = "Test sms"
