@@ -6,3 +6,9 @@ class IncidentType(Enum):
     RESCUE_AND_EVACUATION = "Rescue & Evacuation"
     FIRE_FIGHTING = "Fire Fighting"
     GAS_LEAK_CONTROL = "Gas Leak Control"
+
+    @staticmethod
+    def from_str(label):
+        for incident_type in IncidentType:
+            if label == str(incident_type):
+                return incident_type

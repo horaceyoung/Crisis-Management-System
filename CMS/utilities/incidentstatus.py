@@ -13,3 +13,9 @@ class IncidentStatus(Enum):
 
     # The incident has been resolved.
     RESOLVED = "Resolved"
+
+    @staticmethod
+    def from_str(label):
+        for incident_status in IncidentStatus:
+            if label == str(incident_status):
+                return incident_status
