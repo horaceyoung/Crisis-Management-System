@@ -1,6 +1,5 @@
 {% extends 'base_navi.html' %}
 {% block body %}
-<h2 id="test">Category</h2>
 <select id="category" onchange="location.reload()">
     <option value="Emergency Situations" >--------Emergency Situations--------</option>
 
@@ -10,7 +9,7 @@
     <option value="Tsunami">Tsunami</option>
     <option value="Typhoon">Typhoon</option>
     <option value="Earthquake">Earthquake</option>
-    <option value="Earthquake aftershocks">Earthquake Aftershocks</option>
+    <option value="Earthquake Aftershocks">Earthquake Aftershocks</option>
 
     <option value="Epidemic">----Epidemic----</option>
     <option value="Dengue">Dengue</option>
@@ -35,9 +34,6 @@
 <br>
 <br>
 <script>
-    var locationlist = [];
-
-
     $(document).ready(function(){
         var selected_val = localStorage.getItem("category");
         $("#category").val(selected_val);
@@ -47,15 +43,15 @@
         $(this).closest('form').trigger('submit');
         });
     });
-    var categories = document.getElementById("category");
-    var category = localStorage.getItem("category");
-    //var category = categories.options[categories.selectedIndex].value;
-    document.getElementById("test").textContent = String(category);
-
+    var locationlist = [];
 </script>
 
 {% for location in locations %}
-<script> locationlist.push("{{location.test}}") </script>
+<script>
+var category = localStorage.getItem("category");
+if("{{location.category}}" == String(category)){
+    locationlist.push("{{location.place}}");}
+</script>
 {% endfor %}
 <body>
 {{form.media}}

@@ -12,4 +12,5 @@ class LocationModel(models.Model):
 
 
 class Test(models.Model):
-    test = models.CharField(max_length=100)
+    place = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
