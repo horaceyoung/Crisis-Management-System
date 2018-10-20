@@ -11,19 +11,18 @@ class StatusReportGenerator:
     """
     Generates status reports for the prime minister containing key indicators
     and trends (calculated from the key indicators of the previous report).
-
-    interval: indicates how often status reports are generated.
     """
 
     def __init__(self, interval):
+        """
+        :param interval: the number of seconds between generations of status reports
+        """
         self.messages_received = 0
         self.distributor = InformationSender()
         self.interval = interval
         self.prime_minister_address = 'lee.hsien.loong@gmail.com'
         self.prev_key_indicators = KeyIndicators()
         self.key_indicators = KeyIndicators()
-
-        Timer(interval, self.generate_report).start()  # Schedule first report
 
     def notify(self, message):
         """
@@ -47,9 +46,6 @@ class StatusReportGenerator:
         Generates a status report based on key indicators, sends it by email to the prime minister and
         resets key indicators.
         """
-        # Schedule next report
-        Timer(self.interval, self.generate_report).start()
-
         title = 'Incident Status Report ' + str(datetime.now())
         report = self.key_indicators.reported_incidents_by_type() + '\n'
         report += self.key_indicators.ongoing_incidents() + '\n'
@@ -62,6 +58,13 @@ class StatusReportGenerator:
         # Reset key indicators
         self.prev_key_indicators = self.key_indicators
         self.key_indicators = KeyIndicators()
+
+    def schedule_generation(self):
+        """
+        Schedules status reports to be generated every self.interval number of seconds.
+        """
+        Timer(self.interval, self.schedule_generation).start()
+        Timer(self.interval, self.generate_report).start()
 
 
 class KeyIndicators:
@@ -81,7 +84,7 @@ class KeyIndicators:
         """
         res = 'Number of reported incidents of type'
         for tag in IncidentType:
-            res += '\n\t- ' + tag.value + ': ' + self.reported_incidents[tag] + '.'
+            res += '\n\t- ' + tag.value + ': ' + str(self.reported_incidents[tag]) + '.'
 
     def ongoing_incidents(self):
         """
@@ -94,7 +97,10 @@ class KeyIndicators:
         """
         Calculates the mean time for an incident to become resolved.
         """
-        mtr = self.total_resolution_time / self.resolved_incidents
+        if self.resolved_incidents == 0:
+            mtr = 0.0
+        else:
+            mtr = self.total_resolution_time / self.resolved_incidents
         return 'Mean time of incident resolution: ' + str(mtr) + '.'
 
     def trending_incident_type(self, prev):
