@@ -4,7 +4,7 @@ from utilities.incidentstatus import IncidentStatus
 from utilities.region import Region
 from callcentre.models import Incident
 from threading import Timer
-from datetime import datetime
+from django.utils import timezone
 
 
 class StatusReportGenerator:
@@ -36,17 +36,19 @@ class StatusReportGenerator:
         if message.incident_status == IncidentStatus.NEW:
             self.key_indicators.reported_incidents[incident_type] += 1
             self.key_indicators.affected_regions[region] += 1
+            self.key_indicators.number_of_ongoing_incidents += 1
         elif message.incident_status == IncidentStatus.RESOLVED:
             self.key_indicators.total_resolution_time +=\
-                datetime.now() - incident.incident_time
-            self.key_indicators.resolved_incidents += 1
+                (timezone.now() - incident.incident_time).total_seconds() / 60
+            self.key_indicators.number_of_resolved_incidents += 1
+            self.key_indicators.number_of_ongoing_incidents -= 1
 
     def generate_report(self):
         """
         Generates a status report based on key indicators, sends it by email to the prime minister and
         resets key indicators.
         """
-        title = 'Incident Status Report ' + str(datetime.now())
+        title = 'Incident Status Report ' + str(timezone.now())
         report = self.key_indicators.reported_incidents_by_type() + '\n'
         report += self.key_indicators.ongoing_incidents() + '\n'
         report += self.key_indicators.mean_resolution_time() + '\n'
@@ -72,10 +74,12 @@ class KeyIndicators:
     Contains statistics used to calculate key indicators and trends.
     Can calculate the indicators and trends, which are returned as human-readable strings.
     """
+    number_of_ongoing_incidents = 0
+
     def __init__(self):
         self.reported_incidents = {key: 0 for key in IncidentType}
         self.affected_regions = {key: 0 for key in Region}
-        self.resolved_incidents = 0
+        self.number_of_resolved_incidents = 0
         self.total_resolution_time = 0.0
 
     def reported_incidents_by_type(self):
@@ -86,22 +90,23 @@ class KeyIndicators:
         for tag in IncidentType:
             res += '\n\t- ' + tag.value + ': ' + str(self.reported_incidents[tag]) + '.'
 
+        return res
+
     def ongoing_incidents(self):
         """
         Calculates the number of incidents which have not yet been resolved.
         """
-        ongoing = sum(self.reported_incidents.values()) - self.resolved_incidents
-        return 'Number of incidents which are still ongoing: ' + str(ongoing) + '.'
+        return 'Number of incidents which are still ongoing: ' + str(self.number_of_ongoing_incidents) + '.'
 
     def mean_resolution_time(self):
         """
         Calculates the mean time for an incident to become resolved.
         """
-        if self.resolved_incidents == 0:
+        if self.number_of_resolved_incidents == 0:
             mtr = 0.0
         else:
-            mtr = self.total_resolution_time / self.resolved_incidents
-        return 'Mean time of incident resolution: ' + str(mtr) + '.'
+            mtr = self.total_resolution_time / self.number_of_resolved_incidents
+        return 'Mean time of incident resolution: {:.1f} minutes.'.format(mtr)
 
     def trending_incident_type(self, prev):
         """
