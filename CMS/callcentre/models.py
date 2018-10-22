@@ -20,6 +20,6 @@ class Incident(models.Model):
     incident_location = models.CharField(max_length=100, default='NULL')
     incident_department = models.CharField(max_length=100, default='NULL')
     incident_region = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in Region], default='NULL')
-    incident_category = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentType], default='NULL')
+    incident_category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, default='NULL')
     incident_status = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentStatus], default='NULL')
     incident_description = models.CharField(max_length=400, default='NULL')
