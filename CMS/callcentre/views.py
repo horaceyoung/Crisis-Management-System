@@ -1,34 +1,13 @@
 from django.shortcuts import render
-from django import forms
-from .models import Incident, ContactForm2
-from django.shortcuts import render_to_response
-from django.shortcuts import render
-from django.template import RequestContext
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
+from .models import Incident
 
-IncidentType = CATEGORY_CHOICES = [
-    ("Emergency Ambulance", "Emergency Ambulance"), 
-    ("Rescue & Evacuation", "Rescue & Evacuation"),
-    ("Fire Fighting", "Fire Fighting"),
-    ("Gas Leak Control", "Gas Leak Control"),        
-]
 
-def incidentCreation(request):
-	print("A new page is shown\n\n\n\n")
-	print(request.method)
-	if request.method=='GET':
-		form = ContactForm2(request.GET)											
-		if form.is_valid():
-			print("The form is valid\n\n\n\n")
-			incident = Incident()
-			incident.caller_name = form.cleaned_data['caller_name']
-			incident.mobile_number = form.cleaned_data['mobile_number']
-			incident.location = form.cleaned_data['incident_location']
-			incident.incident_category = form.cleaned_data['incident_category']
-			incident.save()
-			print("A new incident is saved\n\n\n\n")
-			return render_to_response('callcentre/incidentCreation.html',{'form':form},RequestContext(request))
-		else:
-			form=ContactForm2()
-			return render_to_response('callcentre/incidentCreation.html',{'form':form},RequestContext(request))
+def callcentre_home(request):
+    all_unsolved_incidents = Incident.objects.exclude(incident_status='RESOLVED').order_by('incident_time')
+    context = {'all_unsolved_incidents' : all_unsolved_incidents }
+    return render(request, 'callcentre/callcentre_home.html', context)
+
+def callcentre_history(request):
+    incident_history = Incident.objects.filter(incident_status='RESOLVED')
+    context = {'incident_history' : incident_history }
+    return render(request, 'callcentre/callcentre_history.html', context)
