@@ -16,7 +16,7 @@ def incidentCreation(request):
 			incident = Incident()
 			incident.caller_name = form.cleaned_data['caller_name']
 			incident.mobile_number = form.cleaned_data['mobile_number']
-			incident.location = form.cleaned_data['incident_location']
+			incident.incident_location = form.cleaned_data['incident_location']
 			incident.incident_category = form.cleaned_data['incident_category']
 			incident.save()
 			print("A new incident is saved\n\n\n\n")
