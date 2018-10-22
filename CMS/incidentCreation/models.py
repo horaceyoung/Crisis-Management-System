@@ -10,4 +10,4 @@ from callcentre.models import Incident
 class ContactForm2(forms.ModelForm):
     class Meta:
         model=Incident                   
-        fields=('caller_name','mobile_number', 'incident_location', 'incident_category') 
+        fields=('caller_name','mobile_number', 'incident_location', 'incident_type','incident_category') 
