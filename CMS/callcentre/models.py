@@ -6,6 +6,13 @@ from utilities.region import Region
 from django.utils import timezone
 
 
+CATEGORY_CHOICES = [    # Note square brackets.
+    ("Emergency Ambulance", "Emergency Ambulance"), 
+    ("Rescue & Evacuation", "Rescue & Evacuation"),
+    ("Fire Fighting", "Fire Fighting"),
+    ("Gas Leak Control", "Gas Leak Control"),        
+]
+
 class Incident(models.Model):
     caller_name = models.CharField(max_length=50, default='NULL')
     mobile_number = models.CharField(max_length=8, default='NULL')
