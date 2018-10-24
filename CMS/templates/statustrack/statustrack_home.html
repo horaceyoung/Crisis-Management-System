@@ -2,4 +2,37 @@
 
 {% block body %}
 <h1>Status Track Page</h1>
+<h2>Status track for unsolved incidents</h2>
+<table style="width=100%", border="2">
+    <tr>
+        <th>Step</th>
+        <th>Task</th>
+        <th>Status</th>
+    </tr>
+
+    <tr>
+        <td>01</td>
+        <td>certain department was informed, task assigned</td>
+        <td>{{ incident.incident_status }}</td>
+    </tr>
+
+    <tr>
+        <td>02</td>
+        <td>a plan of solving the incident is arranged</td>
+        <td>{{ incident.incident_status }}</td>
+    </tr>
+
+    <tr>
+        <td>03</td>
+        <td>work is under way according to the plan</td>
+        <td>{{ incident.incident_status }}</td>
+    </tr>
+
+     <tr>
+        <td>04</td>
+        <td>work has been finished</td>
+        <td>{{ incident.incident_status }}</td>
+    </tr>
+
+</table>
 {% endblock %}

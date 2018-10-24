@@ -18,7 +18,7 @@
     <td>{{ incident.incident_category }}</td>
     <td>{{ incident.incident_time }}</td>
     <td>{{ incident.incident_location }}</td>
-      <td><a href="#">{{ incident.incident_status }}</a></td>
+      <td><a href="{% url 'statustrack:statustrack_home' %}">{{ incident.incident_status }}</a></td>
     <td>{{ incident.incident_department }}</td>
   </tr>
     {% endfor %}

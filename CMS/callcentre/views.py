@@ -11,3 +11,4 @@ def callcentre_history(request):
     incident_history = Incident.objects.filter(incident_status='RESOLVED')
     context = {'incident_history' : incident_history }
     return render(request, 'callcentre/callcentre_history.html', context)
+
