@@ -13,7 +13,7 @@ class InformationDistributorTest(TestCase):
     def setUp(self):
         incident1 = Incident(incident_time=timezone.now(),
                              incident_region=Region.CS,
-                             incident_category=IncidentType.GAS_LEAK_CONTROL,
+                             incident_category=IncidentType.GAS_LEAK_CONTROL.value,
                              incident_status=IncidentStatus.NEW)
         incident1.save()
         self.message = Message(incident1.id, incident1.incident_status)
@@ -102,7 +102,7 @@ class StatusReportGeneratorTest(TestCase):
         self.region = Region.CS
         incident1 = Incident(incident_time=timezone.now(),
                              incident_region=self.region,
-                             incident_category=self.incident_type,
+                             incident_category=self.incident_type.value,
                              incident_status=IncidentStatus.NEW)
         incident1.save()
         self.message_new = Message(incident1.id, incident1.incident_status)

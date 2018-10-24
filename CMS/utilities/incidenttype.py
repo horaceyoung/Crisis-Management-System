@@ -10,5 +10,5 @@ class IncidentType(Enum):
     @staticmethod
     def from_str(label):
         for incident_type in IncidentType:
-            if label == str(incident_type):
+            if label == str(incident_type.value):
                 return incident_type
