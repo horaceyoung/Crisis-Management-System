@@ -1,5 +1,70 @@
 {% extends 'base_navi.html' %}
-
 {% block body %}
-<h1>Map Homepage</h1>
+<select id="category" onchange="location.reload()">
+    <option value="Emergency Situations" >--------Emergency Situations--------</option>
+
+    <option value="Natural Hazards">----Natural Hazards----</option>
+    <option value="Fire">Fire</option>
+    <option value="Haze">Haze</option>
+    <option value="Tsunami">Tsunami</option>
+    <option value="Typhoon">Typhoon</option>
+    <option value="Earthquake">Earthquake</option>
+    <option value="Earthquake Aftershocks">Earthquake Aftershocks</option>
+
+    <option value="Epidemic">----Epidemic----</option>
+    <option value="Dengue">Dengue</option>
+    <option value="HIV/AIDS">HIV/AIDS</option>
+    <option value="Bird-flu">Bird-flu</option>
+    <option value="Zika">Zika</option>
+
+    <option value="Traffic Accidents">----Traffic Accidents----</option>
+    <option value="Single Car Accidents">Single Car Accidents</option>
+    <option value="Two Car Collisions">Two Car Collisions</option>
+    <option value="Multiple Vehicle Pile-up">Multiple Vehicle Pile-up</option>
+
+    <option value="Incidents within Crowded Areas">----Incidents within Crowded Areas----</option>
+    <option value="Terrorist Attacks">Terrorist Attacks</option>
+    <option value="Mass Shooting">Mass Shooting</option>
+
+    <option value="Other Useful Information">--------Other Useful Information--------</option>
+
+    <option value="Weather">Weather</option>
+    <option value="Civil Defense Shelters">Civil Defense Shelters</option>
+</select>
+<br>
+<br>
+<script>
+    // store the value of selection to localStorage
+
+    $(document).ready(function(){
+        var selected_val = localStorage.getItem("category");
+        $("#category").val(selected_val);
+    $("#category").change(function(){
+        var selected = $("#category").val();
+        localStorage.setItem("category", selected);
+        $(this).closest('form').trigger('submit');
+        });
+    });
+
+    // initialize the containers for data to be used in javascript file
+    var locationlist = [];
+    var times = [];
+    var descriptions = [];
+</script>
+
+{% for incident in incidents %}
+<script>
+// this script is to push all the incident of the selected type into the containers
+var category = localStorage.getItem("category");
+if("{{incident.incident_type}}" == String(category)){
+    locationlist.push("{{incident.incident_location}}");
+    //times.push("{{incident.incident_time}}"); not sure what data type will datetime be in javascript
+    descriptions.push("{{incident.incident_description}}");
+    }
+</script>
+{% endfor %}
+<body>
+{{form.media}}
+</body>
+{{form.as_p}}
 {% endblock %}

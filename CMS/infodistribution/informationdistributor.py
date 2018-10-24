@@ -10,8 +10,9 @@ class InformationDistributor:
     """
 
     def __init__(self):
-        self.observers = [Dispatcher(), SocialMediaAlerter(),
-                          StatusReportGenerator(1800.0)]
+        status_report_generator = StatusReportGenerator(1800.0)
+        status_report_generator.schedule_generation()
+        self.observers = [Dispatcher(), SocialMediaAlerter(), status_report_generator]
 
     def distribute(self, message):
         """
