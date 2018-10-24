@@ -44,13 +44,18 @@
         });
     });
     var locationlist = [];
+    var times = [];
+    var descriptions = [];
 </script>
 
-{% for location in locations %}
+{% for incident in incidents %}
 <script>
 var category = localStorage.getItem("category");
-if("{{location.category}}" == String(category)){
-    locationlist.push("{{location.place}}");}
+if("{{incident.incident_type}}" == String(category)){
+    locationlist.push("{{incident.incident_location}}");
+    //times.push("{{incident.incident_time}}"); not sure what data type will datetime be in javascript
+    descriptions.push("{{incident.incident_description}}");
+    }
 </script>
 {% endfor %}
 <body>

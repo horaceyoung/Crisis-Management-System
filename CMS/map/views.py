@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import FormView
 from map.form import LocationForm
 from .models import Test
+from callcentre.models import Incident
 from django.core.serializers.json import DjangoJSONEncoder
 import json
 
@@ -12,7 +13,7 @@ class LocationFormView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(LocationFormView, self).get_context_data(**kwargs)
-        locations = Test.objects.all()
+        incidents = Incident.objects.all()
         #locations_json = json.dumps(list(locations), cls=DjangoJSONEncoder)
-        context['locations'] = locations
+        context['incidents'] = incidents
         return context
