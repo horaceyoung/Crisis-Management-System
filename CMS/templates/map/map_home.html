@@ -34,6 +34,8 @@
 <br>
 <br>
 <script>
+    // store the value of selection to localStorage
+
     $(document).ready(function(){
         var selected_val = localStorage.getItem("category");
         $("#category").val(selected_val);
@@ -43,6 +45,8 @@
         $(this).closest('form').trigger('submit');
         });
     });
+
+    // initialize the containers for data to be used in javascript file
     var locationlist = [];
     var times = [];
     var descriptions = [];
@@ -50,6 +54,7 @@
 
 {% for incident in incidents %}
 <script>
+// this script is to push all the incident of the selected type into the containers
 var category = localStorage.getItem("category");
 if("{{incident.incident_type}}" == String(category)){
     locationlist.push("{{incident.incident_location}}");
