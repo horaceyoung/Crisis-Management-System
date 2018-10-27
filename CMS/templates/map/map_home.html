@@ -1,5 +1,22 @@
 {% extends 'base_navi.html' %}
 {% block body %}
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
 <select id="category" onchange="location.reload()">
     <option value="Emergency Situations" >--------Emergency Situations--------</option>
 
@@ -52,6 +69,8 @@
     var descriptions = [];
 </script>
 
+
+<body>
 {% for incident in incidents %}
 <script>
 // this script is to push all the incident of the selected type into the containers
@@ -63,8 +82,39 @@ if("{{incident.incident_type}}" == String(category)){
     }
 </script>
 {% endfor %}
-<body>
 {{form.media}}
-</body>
+
+
 {{form.as_p}}
+
+<table id="display_table">
+    <tr>
+        <th>Type</th>
+        <th>Location</th>
+        <th>Department</th>
+        <th>Region</th>
+        <th>Status</th>
+        <th>Description</th>
+    </tr>
+
+{% for incident in incidents %}
+<script>
+// this script is to populate the table based on the selected category
+    var category = localStorage.getItem("category");
+    var $table = $('#display_table');
+    if("{{incident.incident_type}}" == String(category)){
+         $table.append('<tr>' +
+                                        '<th>' + '{{incident.incident_type}}' + '</th>' +
+                                        '<th>' + '{{incident.incident_location}}' + '</th>' +
+                                        '<th>' + '{{incident.incident_department}}' + '</th>' +
+                                        '<th>' + '{{incident.incident_region}}' + '</th>' +
+                                        '<th>' + '{{incident.incident_type}}' + '</th>' +
+                                        '<th>' + '{{incident.incident_type}}' + '</th>' +
+                                        '</tr>'
+                                        );
+    }
+</script>
+{% endfor %}
+</table>
 {% endblock %}
+</body>
