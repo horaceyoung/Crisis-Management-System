@@ -141,7 +141,7 @@ function googleMapAdmin() {
         },
 
         setMarker: function(latlng) {
-                self.addMarker({'latlng': latlng, 'draggable': true});
+                self.addMarker({'latlng': latlng, 'draggable': false});
         },
 
         addMarker: function(Options) {

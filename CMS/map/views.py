@@ -16,4 +16,5 @@ class LocationFormView(FormView):
         incidents = Incident.objects.all()
         # locations_json = json.dumps(list(locations), cls=DjangoJSONEncoder)
         context['incidents'] = incidents # allow template to utilize incidents
+        context['type'] = ' '
         return context
