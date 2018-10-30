@@ -1,38 +1,33 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
+
+<script>
+function sumbit_sure(){
+var gnl=confirm("Confirm to update?");
+if (gnl==true){
+return true;
+}else{
+return false;
+}
+}
+</script>
+
 <h1>Status Track Page</h1>
 <h2>Status track for unsolved incidents</h2>
-<table style="width=100%", border="2">
-    <tr>
-        <th>Step</th>
-        <th>Task</th>
-        <th>Status</th>
-    </tr>
+  <form method="post">
+    {% csrf_token %}
+    <input type="text" name="" value="">
+    <button type="submit">Submit</button>
+  </form>
+  <form action="/statustrack"  method="GET" onsubmit="return sumbit_sure()">
+    {% for field in form %}
+    <div class="fieldWrapper">
+     {{ field.label_tag }}:{{ field }} {{ field.errors }}
+    </div>
+    {% endfor %}
+    <div class="fieldWrapper">
+    <p><input type="submit" value="Update"/><div>
 
-    <tr>
-        <td>01</td>
-        <td>certain department was informed, task assigned</td>
-        <td>{{ incident.incident_status }}</td>
-    </tr>
-
-    <tr>
-        <td>02</td>
-        <td>a plan of solving the incident is arranged</td>
-        <td>{{ incident.incident_status }}</td>
-    </tr>
-
-    <tr>
-        <td>03</td>
-        <td>work is under way according to the plan</td>
-        <td>{{ incident.incident_status }}</td>
-    </tr>
-
-     <tr>
-        <td>04</td>
-        <td>work has been finished</td>
-        <td>{{ incident.incident_status }}</td>
-    </tr>
-
-</table>
+  </form>
 {% endblock %}

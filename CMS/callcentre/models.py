@@ -12,6 +12,7 @@ CATEGORY_CHOICES = [    # Note square brackets.
     ("Gas Leak Control", "Gas Leak Control"),        
 ]
 
+
 TYPE_CHOICES = [
     ("--------Emergency Situations--------", "--------Emergency Situations--------"),
     ("----Natural Hazards----", "----Natural Hazards----"),
@@ -37,6 +38,14 @@ TYPE_CHOICES = [
     ("Weather", "Weather"),
     ("Civil Defense Shelters", "Civil Defense Shelters"),
 ]
+
+STATUS_UPDATE = [
+    ("New", "New"),
+    ("Planned", "Planned"),
+    ("In Progress", "In Progress"),
+    ("Resolved", "Resolved"),
+]
+
 class Incident(models.Model):
     caller_name = models.CharField(max_length=50, default='NULL')
     mobile_number = models.CharField(max_length=8, default='NULL')
@@ -46,6 +55,7 @@ class Incident(models.Model):
     incident_region = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in Region], default='NULL')
     incident_category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, default='NULL')
     incident_type = models.CharField(max_length=100, choices=TYPE_CHOICES, default='NULL')
-    incident_status = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentStatus], default='NEW')
+    incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='NEW')
     incident_description = models.CharField(max_length=400, default='NULL')
+
 

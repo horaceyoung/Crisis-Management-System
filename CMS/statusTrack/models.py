@@ -1,15 +1,15 @@
 from django.db import models
+from django import forms
+import sys, os
 
 
-class Step01(models.Model):
-    department = models.CharField(max_length=500)
+sys.path.append(os.path.abspath(os.path.join('..', 'callcentre')))
 
-class Step02(models.Model):
-    plan = models.CharField(max_length=9999)
+from callcentre.models import Incident
 
-class Step03(models.Model):
-    work = models.CharField(max_length=9999)
+class ContactForm3(forms.ModelForm):
+    class Meta:
+        model=Incident
+        fields=('incident_status',)
 
-class step04(models.Model):
-    status = models.CharField(max_length=9)
 
