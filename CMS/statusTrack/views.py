@@ -8,6 +8,16 @@ from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
+from django.views.generic import TemplateView
+from statusTrack.forms import StatusForm
+
+class StatusView(TemplateView):
+	template_name = 'statustrack/statustrack_home.html'
+
+	def get(self, request):
+		form = StatusForm()
+		return render(request, self.template_name, {'form': form})
+
 
 def statusTrack(request):
 	if request.method=='GET':
