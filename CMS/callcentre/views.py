@@ -12,7 +12,3 @@ def callcentre_history(request):
     context = {'incident_history' : incident_history }
     return render(request, 'callcentre/callcentre_history.html', context)
 
-#def status_track(request):
-#    status_track = Incident.objects.filter(id)
-#    context = {'status_track' : status_track}
-#    return render(request, 'statustrack/statustrack_home.html',context)

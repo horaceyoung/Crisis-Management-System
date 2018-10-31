@@ -15,12 +15,12 @@ return false;
 
 <h1>Status Track Page</h1>
 <h2>Status track for unsolved incidents</h2>
-  <form method="post">
-    {% csrf_token %}
 
-    <input type="text" name="" value="">
-    <button type="submit">Submit</button>
+  <form action="/statustrack"  method="post">
+    {% csrf_token %}
+    <input type="text" id="">
   </form>
+
   <form action="/statustrack"  method="GET" onsubmit="return sumbit_sure()">
     {% for field in form %}
     <div class="fieldWrapper">
@@ -32,3 +32,4 @@ return false;
 
   </form>
 {% endblock %}
+
