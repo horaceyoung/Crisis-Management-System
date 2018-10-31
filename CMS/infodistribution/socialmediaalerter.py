@@ -10,15 +10,12 @@ class SocialMediaAlerter:
 
     def notify(self, message):
         self.messages_received += 1
-<<<<<<< HEAD
-        alert = "Alert: " + Incident.incident_type
-        alert += " in " + Incident.incident_region
-        alert += " at " + Incident.incident_time
-=======
-        alert = "Alert: " + str(Incident.incident_type)
-        alert += " in " + str(Incident.incident_region)
-        alert += " at " + str(Incident.incident_time)
->>>>>>> master
+        incident = Incident.objects.get(pk=message.incident_id)
+
+        alert = "Alert: " + incident.incident_type
+        alert += " in " + incident.incident_region
+        alert += " at " + str(incident.incident_time)
+
         self.distro.send_tweet(alert)
         for number in self.phone_numbers:
             self.distro.send_sms(alert, number)
