@@ -16,10 +16,17 @@ class Dispatcher:
 
     def generate_sms(self, incident):
         sms = "Alert: "
+<<<<<<< HEAD
         sms += Incident.incident_type + " in or around "
         sms += Incident.incident_location + ". Reported at "
         sms += Incident.incident_time + "."
         sms += "Details: " + Incident.incident_description
+=======
+        sms += str(Incident.incident_type) + " in or around "
+        sms += str(Incident.incident_location) + ". Reported at "
+        sms += str(Incident.incident_time) + "."
+        sms += "Details: " + str(Incident.incident_description)
+>>>>>>> master
         if incident.incident_category == "Gas Leak Control":
             self.distro.send_sms("Singapore Power " + sms, self.singapore_power_phone)
         else:
