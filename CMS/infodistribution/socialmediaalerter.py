@@ -1,4 +1,5 @@
 from .informationsender import InformationSender
+from callcentre.models import Incident
 
 
 class SocialMediaAlerter:
@@ -9,6 +10,9 @@ class SocialMediaAlerter:
 
     def notify(self, message):
         self.messages_received += 1
-        self.distro.send_tweet(message)
+        alert = "Alert: " + Incident.incident_type
+        alert += " in " + Incident.incident_region
+        alert += " at " + Incident.incident_time
+        self.distro.send_tweet(alert)
         for number in self.phone_numbers:
-            self.distro.send_sms(message, number)
+            self.distro.send_sms(alert, number)
