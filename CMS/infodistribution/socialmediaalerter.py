@@ -14,7 +14,7 @@ class SocialMediaAlerter:
 
         alert = "Alert: " + incident.incident_type
         alert += " in " + incident.incident_region
-        alert += " at " + str(incident.incident_time)
+        alert += " at " + str(incident.incident_time)[:19]
 
         self.distro.send_tweet(alert)
         for number in self.phone_numbers:

@@ -18,7 +18,7 @@ class Dispatcher:
         sms = "Alert: "
         sms += incident.incident_category + " in or around "
         sms += incident.incident_location + ". Reported at "
-        sms += str(incident.incident_time) + ". "
+        sms += str(incident.incident_time)[:19] + " "
         sms += "Details: " + str(incident.incident_description)
 
         if incident.incident_category == "Gas Leak Control":
