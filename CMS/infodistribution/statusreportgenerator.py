@@ -20,7 +20,7 @@ class StatusReportGenerator:
         self.messages_received = 0
         self.distributor = InformationSender()
         self.interval = interval
-        self.prime_minister_address = 'lee.hsien.loong@gmail.com'
+        self.prime_minister_address = '8paxemailservice@gmail.com'
         self.prev_key_indicators = KeyIndicators()
         self.key_indicators = KeyIndicators()
 
