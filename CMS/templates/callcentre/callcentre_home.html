@@ -15,6 +15,7 @@
  {% for incident in all_unsolved_incidents %}
   <tr>
     <td>{{ incident.id }}</td>
+    <td>{{ incident.incident_type }}</td>
     <td>{{ incident.incident_category }}</td>
     <td>{{ incident.incident_time }}</td>
     <td>{{ incident.incident_location }}</td>
