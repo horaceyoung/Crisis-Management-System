@@ -37,22 +37,23 @@ def index(request):
 def detail(request, incident_id):
     try:
         incident = Incident.objects.get(id=incident_id)
-        if request.method == 'GET':
-            form = ContactForm3(request.GET)
+        form = ContactForm3(request.POST)
+        if request.method == 'POST':
             if form.is_valid():
+
                 incident = Incident.objects.get(id=incident_id)
                 incident.incident_status = form.cleaned_data['incident_status']
                 incident.save()
-                return render_to_response('statustrack/detail.html', {'form': form, 'incident': incident}, RequestContext(request))
-            else:
-                form = ContactForm3()
-                return render_to_response('statustrack/detail.html', {'form': form, 'incident': incident}, RequestContext(request))
-
+                context = {'form': form, 'incident': incident}
+                return render(request, 'statustrack/detail.html', context)
+        else:
+            form = ContactForm3()
+            context =  {'form': form, 'incident': incident}
+            return render(request, 'statustrack/detail.html', context)
 
     except Incident.DoesNotExist:
         raise Http404("Incident does not exist")
-    return render(request, 'statustrack/detail.html', {'incident': incident, 'form': form})
-#    return HttpResponse("<h2>Details for incident id: " + str(incident_id) + "</h2>")
+
 
 
 

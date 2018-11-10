@@ -36,14 +36,10 @@ return false;
   </tr>
 </table>
 
-  <form action="/callcentre"  method="GET" onsubmit="return sumbit_sure()">
-    {% for field in form %}
-    <div class="fieldWrapper">
-     {{ field.label_tag }}:{{ field }} {{ field.errors }}
-    </div>
-    {% endfor %}
-    <div class="fieldWrapper">
-    <p><input type="submit" value="Update"/></div>
+  <form action=""  method="POST">
+      {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Save"/>
 
   </form>
 
