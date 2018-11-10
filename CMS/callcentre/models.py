@@ -59,4 +59,5 @@ class Incident(models.Model):
 #   incident_status = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentStatus], default='New')
     incident_description = models.CharField(max_length=400, default='NULL')
 
-
+    def __str__(self):
+        return 'Incident ID: ' + str(self.id) + ' - ' + self.incident_category

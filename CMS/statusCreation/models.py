@@ -11,6 +11,3 @@ class ContactForm3(forms.ModelForm):
     class Meta:
         model=Incident
         fields=('incident_status',)
-
-
-

@@ -16,11 +16,6 @@ return false;
 <h1>Status Track Page</h1>
 <h2>Status track for unsolved incidents</h2>
 
-  <form action="/statustrack"  method="post">
-    {% csrf_token %}
-    <input type="text" id="">
-  </form>
-
   <form action="/statustrack"  method="GET" onsubmit="return sumbit_sure()">
     {% for field in form %}
     <div class="fieldWrapper">
@@ -28,7 +23,7 @@ return false;
     </div>
     {% endfor %}
     <div class="fieldWrapper">
-    <p><input type="submit" value="Update"/><div>
+    <p><input type="submit" value="Update"/></div>
 
   </form>
 {% endblock %}
