@@ -22,14 +22,17 @@ def incidentCreation(request):
             incident.incident_location = form.cleaned_data['incident_location']
             incident.incident_category = form.cleaned_data['incident_category']
             incident.incident_type = form.cleaned_data['incident_type']
+            incident.incident_region = form.cleaned_data['incident_region']
             incident.save()
 
+            print(incident.incident_category)
+            print(incident.incident_region)
             message = Message(incident.id, IncidentStatus.NEW)
             info_dist = InformationDistributor.get_instance()
             info_dist.distribute(message)
 
             # print("A new incident is saved\n\n\n\n")
-            return render_to_response('callcentre/incidentCreation.html', {'form':form}, RequestContext(request))
+            return render_to_response('callcentre/incidentCreation.html', {'form': form}, RequestContext(request))
         else:
             form = ContactForm2()
-            return render_to_response('callcentre/incidentCreation.html', {'form':form}, RequestContext(request))
+            return render_to_response('callcentre/incidentCreation.html', {'form': form}, RequestContext(request))
