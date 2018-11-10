@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from django import forms
 from callcentre.models import Incident
-<<<<<<< HEAD
 from .models import ContactForm3
-=======
-from .models import ContactForm3, ContactForm4
+from .models import ContactForm3
 from utilities.message import Message
 from utilities.incidentstatus import IncidentStatus
-from infodistribution.informationdistributor import InformationDistributor
->>>>>>> b4f52dd7ced4e6542d6820ae2ba9ab7dcec714e9
+
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.template import RequestContext
