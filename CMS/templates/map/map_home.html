@@ -1,22 +1,22 @@
 {% extends 'base_navi.html' %}
 {% block body %}
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+<!--<style>-->
+<!--table {-->
+    <!--font-family: arial, sans-serif;-->
+    <!--border-collapse: collapse;-->
+    <!--width: 100%;-->
+<!--}-->
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
+<!--td, th {-->
+    <!--border: 1px solid #dddddd;-->
+    <!--text-align: left;-->
+    <!--padding: 8px;-->
+<!--}-->
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
+<!--tr:nth-child(even) {-->
+    <!--background-color: #dddddd;-->
+<!--}-->
+<!--</style>-->
 <select id="category" onchange="location.reload()">
     <option value="Emergency Situations" >--------Emergency Situations--------</option>
 
@@ -87,7 +87,7 @@ if("{{incident.incident_type}}" == String(category)){
 
 {{form.as_p}}
 
-<table id="display_table">
+<table id="display_table" class="table table-striped">
     <tr>
         <th>Type</th>
         <th>Location</th>

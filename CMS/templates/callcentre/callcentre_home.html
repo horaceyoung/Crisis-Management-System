@@ -1,12 +1,13 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
-<h1>Call Centre Homepage</h1>
-<h2>Here displays all the unresolved incidents.</h2>
-<table class="table table-bordered" style="width:100%">
+
+<h2 style="margin-top:30px;">Here displays all the unresolved incidents.</h2>
+<table class="table table-striped" style="margin-top:30px;margin-bottom:30px;">
   <tr>
     <th>Incident ID</th>
     <th>Type</th>
+    <th>Category</th>
     <th>Time</th>
     <th>Location</th>
     <th>Status</th>
@@ -25,6 +26,7 @@
     {% endfor %}
 </table>
 <a class="btn btn-default" href="{% url 'incidentCreation:incidentCreation' %}"  role="button">Create incidents</a>
-<a class="btn btn-default" href="{% url 'callcentre:callcentre_history' %}" role="button">History</a>
-<a class="btn btn-default" href="{% url 'statusTrack:statusTrack' %}"  role="button">Update status</a>
+<a class="btn btn-default" href="{% url 'statusTrack:statusTrack' %}"  role="button" style="margin-left:10px;">Update status</a>
+<a class="btn btn-default" href="{% url 'callcentre:callcentre_history' %}" role="button" style="float:right;margin-right:30px;">History</a>
+<div style="margin-top:30px;"></div>
 {% endblock %}
