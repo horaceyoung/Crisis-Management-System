@@ -14,15 +14,15 @@ from django.utils import timezone
 class InformationDistributorTest(TestCase):
     def setUp(self):
         incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=Region.CS,
+                             incident_region=Region.CS.value,
                              incident_category=IncidentType.GAS_LEAK_CONTROL.value,
-                             incident_status=IncidentStatus.NEW)
+                             incident_status=IncidentStatus.NEW.value)
         incident1.save()
-        self.message = Message(incident1.id, incident1.incident_status)
+        self.message = Message(incident1.id, IncidentStatus.NEW)
 
     def test_messages_received(self):
         """Tests that all observers receive the passed message."""
-        infodist = InformationDistributor()
+        infodist = InformationDistributor.get_instance()
         infodist.distribute(self.message)
 
         for observer in infodist.observers:
@@ -130,11 +130,11 @@ class StatusReportGeneratorTest(TestCase):
         self.incident_type = IncidentType.GAS_LEAK_CONTROL
         self.region = Region.CS
         incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=self.region,
+                             incident_region=self.region.value,
                              incident_category=self.incident_type.value,
-                             incident_status=IncidentStatus.NEW)
+                             incident_status=IncidentStatus.NEW.value)
         incident1.save()
-        self.message_new = Message(incident1.id, incident1.incident_status)
+        self.message_new = Message(incident1.id, IncidentStatus.NEW)
         self.message_resolved = Message(incident1.id, IncidentStatus.RESOLVED)
 
     def test_notify(self):
