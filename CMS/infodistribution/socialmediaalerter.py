@@ -8,7 +8,7 @@ from utilities.incidentstatus import IncidentStatus
 
 class SocialMediaAlerter:
     def __init__(self):
-        self.sentTo
+        self.sentTo = None
         self.messages_received = 0
         self.distro = InformationSender()
         self.phone_numbers = {Region.SW:['+6583980512'], Region.NW:['+6584149952'],Region.CS:['+6583980512','+6584149952'],Region.SE:['+6584149952'],Region.NE:['+6583980512','+6584149952']}
