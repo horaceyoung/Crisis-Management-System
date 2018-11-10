@@ -55,8 +55,8 @@ class Incident(models.Model):
     incident_region = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in Region], default='NULL')
     incident_category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, default='NULL')
     incident_type = models.CharField(max_length=100, choices=TYPE_CHOICES, default='NULL')
-#    incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='NEW')
-    incident_status = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentStatus], default='New')
+    incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='NEW')
+#   incident_status = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentStatus], default='New')
     incident_description = models.CharField(max_length=400, default='NULL')
 
 
