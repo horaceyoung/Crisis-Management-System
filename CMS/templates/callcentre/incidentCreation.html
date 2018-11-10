@@ -13,15 +13,19 @@ function sumbit_sure(){
 
   console.log(name)
   if(gnl==true){
-    // Check caller name
-    // Check mobile number
-    if(mobile_number.length!=8){
+    // Check if caller name are not word-space-word-space
+    if(!name.match(/^[A-Za-z]+$/)){
+      alert("Check the caller name!");
+      return false;
+    }
+    // Check if mobile number are not all numebers
+    if(mobile_number.length!=8 || !(/^\d+$/.test(val)){
       alert("Check the mobile number!");
       return false;
     }
-    // Check incident location
+    // Check if incident location contains certain special characters
     if (location.indexOf('@') != (-1)){
-      alert("Check the mobile number!");
+      alert("Check the location!");
       return false;
     }
   }  

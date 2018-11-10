@@ -5,13 +5,18 @@ from utilities.incidenttype import IncidentType
 from utilities.region import Region
 from django.utils import timezone
 
+REGION_CHOICES = [
+    ("North West","North West"),
+    ("Central Singapore","Central Singapore"),
+    ("South East","South East"),
+    ("North East","North East"),
+]
 CATEGORY_CHOICES = [    # Note square brackets.
     ("Emergency Ambulance", "Emergency Ambulance"), 
-    ("Rescue & Evacuation", "Rescue & Evacuation"),
+    ("Rescue and Evacuation", "Rescue and Evacuation"),
     ("Fire Fighting", "Fire Fighting"),
     ("Gas Leak Control", "Gas Leak Control"),        
 ]
-
 
 TYPE_CHOICES = [
     ("--------Emergency Situations--------", "--------Emergency Situations--------"),
@@ -52,7 +57,7 @@ class Incident(models.Model):
     incident_time = models.DateTimeField(default=timezone.now)
     incident_location = models.CharField(max_length=100, default='NULL')
     incident_department = models.CharField(max_length=100, default='NULL')
-    incident_region = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in Region], default='NULL')
+    incident_region = models.CharField(max_length=100, choices = REGION_CHOICES, default='NULL')
     incident_category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, default='NULL')
     incident_type = models.CharField(max_length=100, choices=TYPE_CHOICES, default='NULL')
     incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='NEW')
