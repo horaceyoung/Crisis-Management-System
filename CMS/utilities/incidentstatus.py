@@ -2,6 +2,11 @@ from enum import Enum
 
 
 class IncidentStatus(Enum):
+    """
+    Enum for the different statuses an incident can inhibit.
+
+    Author: Emil Luusua
+    """
     # The incident has just been reported.
     NEW = "New"
 

@@ -2,6 +2,11 @@ from enum import Enum
 
 
 class Region(Enum):
+    """
+    Enum for the different reqions that an incident can occur in.
+
+    Author: Emil Luusua
+    """
     SW = "South West"
     NW = "North West"
     CS = "Central Singapore"

@@ -2,11 +2,12 @@ from .statusreportgenerator import StatusReportGenerator
 from .socialmediaalerter import SocialMediaAlerter
 from .dispatcher import Dispatcher
 
-
 class InformationDistributor:
     """
     Distributes messages to the appropriate component of the subsystem
     for information distribution.
+
+    Author: Emil Luusua
     """
 
     def __init__(self):
