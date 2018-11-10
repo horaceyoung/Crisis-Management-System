@@ -2,6 +2,7 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
+
 <script>
 function sumbit_sure(){
 var gnl=confirm("Confirm to submit?");
@@ -12,18 +13,16 @@ return false;
 }
 }
 </script>
-<div class='container'>
-<h2 style="margin-top:30px;">Create a New Incident</h2>
-  <form action="/incidentCreation"  method="GET" onsubmit="return sumbit_sure()" style="margin-top:30px;">
+
+<h1>Create a New Incident</h1>
+  <form action="/incidentCreation"  method="GET" onsubmit="return sumbit_sure()">
     {% for field in form %} 
-    <div class="form-group">
-     {{ field.label_tag }}: {{ field }} {{ field.errors }}
+    <div class="fieldWrapper">
+     {{ field.label_tag }}:{{ field }} {{ field.errors }} 
     </div>
     {% endfor %} 
-    <div class="form-group">
-    <p><input type="submit" class="btn btn-default" value="Submit"/>
-    </div>
-  </form>
-    </div>
-{% endblock %}
+    <div class="fieldWrapper">
+    <p><input type="submit" value="Submit"/><div>
 
+  </form>
+{% endblock %}

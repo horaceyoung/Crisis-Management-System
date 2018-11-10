@@ -46,24 +46,17 @@ STATUS_UPDATE = [
     ("Resolved", "Resolved"),
 ]
 
-REGION_CHOICES = [
-    ("South West", "South West"),
-    ("North West", "North West"),
-    ("Central Singapore", "Central Singapore"),
-    ("South East", "South East"),
-    ("North East", "North East")
-]
-
 class Incident(models.Model):
     caller_name = models.CharField(max_length=50, default='NULL')
     mobile_number = models.CharField(max_length=8, default='NULL')
     incident_time = models.DateTimeField(default=timezone.now)
     incident_location = models.CharField(max_length=100, default='NULL')
     incident_department = models.CharField(max_length=100, default='NULL')
-    incident_region = models.CharField(max_length=100, choices=REGION_CHOICES, default='NULL')
+    incident_region = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in Region], default='NULL')
     incident_category = models.CharField(max_length=100, choices=CATEGORY_CHOICES, default='NULL')
     incident_type = models.CharField(max_length=100, choices=TYPE_CHOICES, default='NULL')
     incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='NEW')
+#   incident_status = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentStatus], default='New')
     incident_description = models.CharField(max_length=400, default='NULL')
 
     def __str__(self):

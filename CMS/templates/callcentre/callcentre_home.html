@@ -1,13 +1,12 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
-
-<h2 style="margin-top:30px;">Here displays all the unresolved incidents.</h2>
-<table class="table table-striped" style="margin-top:30px;margin-bottom:30px;">
+<h1>Call Centre Homepage</h1>
+<h2>Here displays all the unresolved incidents.</h2>
+<table class="table table-bordered" style="width:100%">
   <tr>
     <th>Incident ID</th>
     <th>Type</th>
-    <th>Category</th>
     <th>Time</th>
     <th>Location</th>
     <th>Status</th>
@@ -16,7 +15,6 @@
  {% for incident in all_unsolved_incidents %}
   <tr>
     <td>{{ incident.id }}</td>
-    <td>{{ incident.incident_type }}</td>
     <td>{{ incident.incident_category }}</td>
     <td>{{ incident.incident_time }}</td>
     <td>{{ incident.incident_location }}</td>
@@ -26,11 +24,6 @@
     {% endfor %}
 </table>
 <a class="btn btn-default" href="{% url 'incidentCreation:incidentCreation' %}"  role="button">Create incidents</a>
-<<<<<<< HEAD
 <a class="btn btn-default" href="{% url 'callcentre:callcentre_history' %}" role="button">History</a>
 <a class="btn btn-default" href="{% url 'statusCreation:index' %}"  role="button">Update status</a>
-=======
-<a class="btn btn-default" href="{% url 'statusTrack:statusTrack' %}"  role="button" style="margin-left:10px;">Update status</a>
-<a class="btn btn-default" href="{% url 'callcentre:callcentre_history' %}" role="button" style="float:right;margin-right:30px;margin-bottom:30px;">History</a>
->>>>>>> b4f52dd7ced4e6542d6820ae2ba9ab7dcec714e9
 {% endblock %}
