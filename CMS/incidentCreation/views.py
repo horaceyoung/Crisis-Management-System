@@ -21,8 +21,6 @@ def incidentCreation(request):
 			print(form.is_valid())
 
 			incident.caller_name = form.cleaned_data['caller_name']
-
-			# incident.caller_name = ContactForm2.clean_caller_name[form]
 			incident.mobile_number = form.cleaned_data['mobile_number']
 			incident.incident_location = form.cleaned_data['incident_location']
 			incident.incident_region = form.cleaned_data['incident_region']
