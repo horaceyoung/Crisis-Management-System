@@ -20,7 +20,7 @@ class InformationDistributorTest(TestCase):
 
     def test_messages_received(self):
         """Tests that all observers receive the passed message."""
-        infodist = InformationDistributor()
+        infodist = InformationDistributor.get_instance()
         infodist.distribute(self.message)
 
         for observer in infodist.observers:
