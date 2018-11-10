@@ -3,11 +3,33 @@
 <head>
     <meta charset="UTF-8">
     {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .row.content {
+        height: 100vh;}
+
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height:100vh;
+    }
+         @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -43,7 +65,16 @@
         </div>
     </div>
 </nav>
+
+<div class="container-fluid text-center">
+  <div class="row content" style="width:1000px;margin:0 auto;">
+
+    <div class="layout_wrap text-left" style="position:center;">
 {% block body %}
 {% endblock %}
+    </div>
+
+  </div>
+</div>
 </body>
 </html>

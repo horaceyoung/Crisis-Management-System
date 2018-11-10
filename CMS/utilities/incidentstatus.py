@@ -2,6 +2,11 @@ from enum import Enum
 
 
 class IncidentStatus(Enum):
+    """
+    Enum for the different statuses an incident can inhibit.
+
+    Author: Emil Luusua
+    """
     # The incident has just been reported.
     NEW = "New"
 
@@ -17,5 +22,5 @@ class IncidentStatus(Enum):
     @staticmethod
     def from_str(label):
         for incident_status in IncidentStatus:
-            if label == str(incident_status):
+            if label == incident_status.value:
                 return incident_status

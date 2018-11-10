@@ -1,11 +1,12 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
-<h1>Here list all the resolved incidents</h1>
-<table class="table table-bordered" style="width:100%">
+<h2 style="margin-top:30px;">Here list all the resolved incidents</h2>
+<table class="table table-striped" style="width:100%;margin-top:30px;">
   <tr>
     <th>Incident ID</th>
     <th>Type</th>
+    <th>Category</th>
     <th>Time</th>
     <th>Location</th>
     <th>Department</th>
@@ -13,6 +14,7 @@
  {% for incident in incident_history %}
   <tr>
     <td>{{ incident.id }}</td>
+    <td>{{ incident.incident_type }}</td>
     <td>{{ incident.incident_category }}</td>
     <td>{{ incident.incident_time }}</td>
     <td>{{ incident.incident_location }}</td>
