@@ -8,5 +8,4 @@ urlpatterns = [
     path('callcentre/', include('callcentre.urls', namespace='callcentre')),
     path('statustrack/', include('statusTrack.urls', namespace='statustrack')),
     path('incidentCreation/', include('incidentCreation.urls', namespace='incidentCreation')),
-    path('statusCreation/', include('statusCreation.urls', namespace='statusCreation')),
 ]

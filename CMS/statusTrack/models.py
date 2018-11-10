@@ -12,5 +12,9 @@ class ContactForm3(forms.ModelForm):
         model=Incident
         fields=('incident_status',)
 
+class ContactForm4(forms.ModelForm):
+    class Meta:
+        model=Incident
+        fields=('id',)
 
 

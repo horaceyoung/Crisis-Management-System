@@ -42,8 +42,7 @@ INSTALLED_APPS = [
     'callcentre',
     'incidentCreation',
     'statusTrack',
-    'django_google_maps',
-    'statusCreation',
+    'django_google_maps'
 ]
 
 MIDDLEWARE = [
