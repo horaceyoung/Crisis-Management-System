@@ -6,31 +6,86 @@
 <script>
 function sumbit_sure(){
   var gnl=confirm("Confirm to submit?");
-  var location_check = "!$%^?<>/"
+
   var name = document.getElementById("1").value;
   var mobile_number = document.getElementById("2").value;
   var location = document.getElementById("3").value;
-  var incident_type = document.getElementById("6")
-  console.log(name)
+  var description = document.getElementById("4").value;
+  var region = document.getElementById("5").value;
+  var type = document.getElementById("6")
+  var category = document.getElementById("7").value;
+
   if(gnl==true){
+
+    // Check for all fields filled
+    if(name==''){
+      alert("The CALLER NAME field cannot be empty!");
+      document.myform.caller_name.focus();
+      return false;
+    }
+
+    if(mobile_number==''){
+      alert("The MOBILT NUMBER cannot be empty!");
+      document.myform.mobile_number.focus();
+      return false;
+    }
+
+    if(location==''){
+      alert("The LOCATION cannot be empty!");
+      document.myform.location.focus();
+      return false;
+    }
+
+    if(description==''){
+      alert("The description cannot be empty!");
+      document.myform.description.focus();
+      return false;
+    }
+
     // Check if caller name is not word-space-word-space
     if(!name.match(/^[A-Za-z]+$/)){
-      alert("Check the caller name!");
+      alert("Check the CALLER NAME!");
+      document.myform.caller_name.focus();
       return false;
     }
     // Check if mobile number are not all numebers
-    if(mobile_number.length!=8 || !(/^\d+$/.test(mobile_number)){
-      alert("Check the mobile number!");
+    if(mobile_number.length!=8 || !mobile_number.match(/^[0-9]+$/)){
+      alert("Check the MOBILE NUMBER!");
+      document.myform.mobile_number.focus();
       return false;
     }
     // Check if incident location contains certain special characters
-    for
     if (location.indexOf('!') != (-1)){
-      alert("Check the location!");
+      alert("Check the LOCATION!");
+      document.myform.incident_location.focus();
       return false;
     }
-  }  
-  return true;
+    // Check if the region has been selected
+    if(region==="Incident Region"){
+      alert("Check the REGION!");
+      document.myform.incident_region.focus();
+      return false;
+    }
+    // Check if the type has been selected
+    if(incident_type==="Emergency Situations"||
+       incident_type==="----Natural Hazards----"||
+       incident_type==="----Epidemic----"||
+       incident_type==="----Traffic Accidents----"||
+       incident_type==="----Incidents within Crowded Areas----"||
+       incident_type==="--------Other Useful Information--------"){
+      alert("Check the INCIDENT TYPE!");
+      document.myform.incident_type.focus();
+      return false;
+    }
+    // Check if the category has been selected
+    if(incident_category==="Incident Category"){
+      alert("Check the INCIDENT CATEGORY!");
+      document.myform.incident_category.focus();
+      return false;
+    }
+    return true;
+  } 
+  return false;
 }
 </script>
 
@@ -68,7 +123,7 @@ function sumbit_sure(){
       <option value="Bird-flu">Bird-flu</option>
       <option value="Zika">Zika</option>
       <option value="Traffic Accidents">----Traffic Accidents----</option>
-      <option value="Single Car Accidents">Single Car Accidents</option>
+      <option value="Single Car Accident">Single Car Accident</option>
       <option value="Two Car Collisions">Two Car Collisions</option>
       <option value="Multiple Vehicle Pile-up">Multiple Vehicle Pile-up</option>
       <option value="Incidents within Crowded Areas">----Incidents within Crowded Areas----</option>
@@ -88,7 +143,6 @@ function sumbit_sure(){
     </select><br>
     <input type="submit" value="Submit"/></div>
   </form>
-
 
 {% endblock %}
 

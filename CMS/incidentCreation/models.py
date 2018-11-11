@@ -1,8 +1,6 @@
 from django.db import models
 from django import forms
 import sys, os 
-from django.utils.translation import ugettext_lazy as _
-from django.http import HttpResponseRedirect
 
 
 sys.path.append(os.path.abspath(os.path.join('..', 'callcentre')))
