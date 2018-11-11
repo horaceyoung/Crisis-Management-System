@@ -1,10 +1,7 @@
 from django.shortcuts import render
 from django import forms
 from callcentre.models import Incident
-from .models import ContactForm3, ContactForm4
-from utilities.message import Message
-from utilities.incidentstatus import IncidentStatus
-from infodistribution.informationdistributor import InformationDistributor
+from .models import ContactForm3
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.template import RequestContext
@@ -26,16 +23,11 @@ def statusTrack(request):
 		form = ContactForm3(request.GET)
 		if form.is_valid():
 			# print("The form is valid\n\n\n\n")
-			incident = Incident.objects.get(id=idget)
+			incident = Incident.objects.get(id=5)
 			incident.incident_status = form.cleaned_data['incident_status']
 			incident.save()
-
-			message = Message(incident.id, IncidentStatus.from_str(incident.incident_status))
-			info_dist = InformationDistributor.get_instance()
-			info_dist.distribute(message)
-
 			# print("A new incident is saved\n\n\n\n")
-			return render_to_response('statustrack/statustrack_home.html', {'form': form}, RequestContext(request))
+			return render_to_response('statustrack/statustrack_home.html',{'form':form},RequestContext(request))
 		else:
 			form=ContactForm3()
-			return render_to_response('statustrack/statustrack_home.html', {'form': form}, RequestContext(request))
+			return render_to_response('statustrack/statustrack_home.html',{'form':form},RequestContext(request))
