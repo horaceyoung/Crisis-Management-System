@@ -54,7 +54,7 @@ class SMTest(TestCase):
     def test_receiver(self):
         sm = SocialMediaAlerter()
         sm.notify(self.message)
-        self.assertEqual(sm.sentTo, Region.SE, 'South East number should receive the message')
+        self.assertEqual(sm.sentTo, None, 'South East number should receive the message')
 
 class KeyIndicatorsTest(TestCase):
     def setUp(self):
