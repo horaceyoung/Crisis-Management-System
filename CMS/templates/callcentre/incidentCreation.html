@@ -7,20 +7,19 @@
 function sumbit_sure(){
   var gnl=confirm("Confirm to submit?");
 
-  var name = document.getElementById("1").value;
-  var mobile_number = document.getElementById("2").value;
-  var location = document.getElementById("3").value;
-  var description = document.getElementById("4").value;
-  var region = document.getElementById("5").value;
-  var type = document.getElementById("6")
-  var category = document.getElementById("7").value;
-
+  var name = document.forms["myform"]["caller_name"].value
+  var mobile_number = document.forms["myform"]["mobile_number"].value
+  var location = document.forms["myform"]["incident_location"].value
+  var description = document.forms["myform"]["incident_description"].value
+  var region = document.forms["myform"]["incident_region"].value
+  var type = document.forms["myform"]["incident_type"].value
+  var category = document.forms["myform"]["incident_category"].value
   if(gnl==true){
 
     // Check for all fields filled
     if(name==''){
       alert("The CALLER NAME field cannot be empty!");
-      document.myform.caller_name.focus();
+      document.forms["myform"]["caller_name"].focus();
       return false;
     }
 
