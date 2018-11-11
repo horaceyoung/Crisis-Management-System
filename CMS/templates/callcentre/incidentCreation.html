@@ -10,7 +10,7 @@ function sumbit_sure(){
   var name = document.getElementById("1").value;
   var mobile_number = document.getElementById("2").value;
   var location = document.getElementById("3").value;
-
+  var incident_type = document.getElementById("6")
   console.log(name)
   if(gnl==true){
     // Check if caller name is not word-space-word-space
@@ -24,7 +24,7 @@ function sumbit_sure(){
       return false;
     }
     // Check if incident location contains certain special characters
-    for 
+    for
     if (location.indexOf('!') != (-1)){
       alert("Check the location!");
       return false;
@@ -43,16 +43,17 @@ function sumbit_sure(){
     Incident Location
     <input type="text" name="incident_location" id="3"/> <br>
     Incident Description
-    <input type="text" name="incident_description"> <br>
+    <input type="text" name="incident_description" id="4"> <br>
     Region
-    <select id="incident_region" name="incident_region">
+    <select id="incident_region" name="incident_region" id="5">
+      <option value="Incident Region">--------Incident Region--------</option>
       <option value="North West">North West</option>
       <option value="Central Singapore">Central Singapore</option>
       <option value="South East">South East</option>
       <option value="North East">North East</option>
     </select><br>
     Incident Type
-    <select id="incident_type" name="incident_type">
+    <select id="incident_type" name="incident_type" id="6">
       <option value="Emergency Situations" >--------Emergency Situations--------</option>
       <option value="Natural Hazards">----Natural Hazards----</option>
       <option value="Fire">Fire</option>
@@ -78,7 +79,8 @@ function sumbit_sure(){
       <option value="Civil Defense Shelters">Civil Defense Shelters</option>
     </select><br>
     Incident Category
-    <select id="incident_category" name="incident_category">
+    <select id="incident_category" name="incident_category" id="7">
+      <option value="Incident Category">--------Incident Category--------</option>
       <option value="Emergency Ambulance">Emergency Ambulance</option>
       <option value="Rescue and Evacuation">Rescue and Evacuation</option>
       <option value="Fire Fighting">Fire Fighting</option>
