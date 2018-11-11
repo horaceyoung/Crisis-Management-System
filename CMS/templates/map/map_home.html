@@ -1,23 +1,7 @@
 {% extends 'base_navi.html' %}
 {% block body %}
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
-<select id="category" onchange="location.reload()">
+<label style="margin-top:30px;">Choose an incident type for display :</label>
+<select id="category" onchange="location.reload()" style="margin-left:10px;">
     <option value="Emergency Situations" >--------Emergency Situations--------</option>
 
     <option value="Natural Hazards">----Natural Hazards----</option>
@@ -70,7 +54,6 @@ tr:nth-child(even) {
 </script>
 
 
-<body>
 {% for incident in incidents %}
 <script>
 // this script is to push all the incident of the selected type into the containers
@@ -116,5 +99,179 @@ if("{{incident.incident_type}}" == String(category)){
 </script>
 {% endfor %}
 </table>
+<link href="http://www.weather.gov.sg/wp-content/themes/wiptheme/styles_resizer.css" rel="stylesheet">
+<link rel="stylesheet" href="http://www.weather.gov.sg/wp-content/themes/wiptheme/jquery-ui/jquery-ui.css">
+<script src="http://www.weather.gov.sg/wp-content/themes/wiptheme/jquery-ui/jquery-ui.min.js"></script>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" href="http://www.weather.gov.sg/wp-content/themes/wiptheme/assets/css/style.css">
+<!--<script async src="//www.google-analytics.com/analytics.js"></script>-->
+<!--<script src="http://www.weather.gov.sg/wp-content/themes/wiptheme/lib/jquery/jquery1.11.1.min.js"></script>-->
+<!--<script src="http://www.weather.gov.sg/wp-content/themes/wiptheme/lib/bootstrap/js/bootstrap.min.js"></script>-->
+<!--<script src="http://www.weather.gov.sg/wp-content/themes/wiptheme/assets/js/global1.0.min.js"></script>-->
+<!--<script src="http://www.weather.gov.sg/wp-content/themes/wiptheme/js/utils1.0.js"></script>-->
+<!--<script src="http://www.weather.gov.sg/wp-content/themes/wiptheme/js/mobile.detect.js"></script>-->
+<!--<script src="//assets.adobedtm.com/a63ef04a8a06d4763abe9b28a8d967e7e749d199/satelliteLib-db3891214175cc48594c242657d262be8297f3d8.js"></script>-->
+<!--<script src="http://assets.adobedtm.com/a63ef04a8a06d4763abe9b28a8d967e7e749d199/scripts/satellite-597fff5164746d2bd8008ea3.js"></script>-->
+<!--<script src="http://assets.adobedtm.com/a63ef04a8a06d4763abe9b28a8d967e7e749d199/s-code-contents-e955f87a74cd9baabe4f7178052bbab600d8d67b.js"></script>-->
+<!--<script src="http://assets.adobedtm.com/a63ef04a8a06d4763abe9b28a8d967e7e749d199/s-code-contents-92266dd02c8c1cb0c91de826f3314ba9424fd0d5.js"></script>-->
+<!--<style>-->
+
+<!--.overlay_image {-->
+	<!--position: absolute;-->
+	<!--display: none;-->
+<!--}-->
+  <!--.ui-tooltip, .arrow:after {-->
+    <!--background: black;-->
+    <!--border: 2px solid black;-->
+  <!--}-->
+  <!--.ui-tooltip {-->
+    <!--padding: 10px 20px;-->
+    <!--color: black;-->
+    <!--border-radius: 20px;-->
+    <!--font: bold 14px "Helvetica Neue", Sans-Serif;-->
+    <!--text-transform: uppercase;-->
+    <!--box-shadow: 0 0 7px black;-->
+  <!--}-->
+  <!--.arrow {-->
+    <!--width: 70px;-->
+    <!--height: 16px;-->
+    <!--overflow: hidden;-->
+    <!--position: absolute;-->
+    <!--left: 50%;-->
+    <!--margin-left: -35px;-->
+    <!--bottom: -16px;-->
+  <!--}-->
+  <!--.arrow.top {-->
+    <!--top: -16px;-->
+    <!--bottom: auto;-->
+  <!--}-->
+  <!--.arrow.left {-->
+    <!--left: 20%;-->
+  <!--}-->
+  <!--.arrow:after {-->
+    <!--content: "";-->
+    <!--position: absolute;-->
+    <!--left: 20px;-->
+    <!--top: -20px;-->
+    <!--width: 25px;-->
+    <!--height: 25px;-->
+    <!--box-shadow: 6px 5px 9px -9px black;-->
+    <!-- -webkit-transform: rotate(45deg);-->
+    <!-- -ms-transform: rotate(45deg);-->
+    <!--transform: rotate(45deg);-->
+  <!--}-->
+  <!--.arrow.top:after {-->
+    <!--bottom: -20px;-->
+    <!--top: auto;-->
+  <!--}-->
+  <!--.currentraintime {-->
+	<!--position:absolute;-->
+	<!--z-index:2;-->
+	<!--/* background: none repeat scroll 0 0 #fff; */-->
+    <!--color: #333;-->
+    <!--font-family: Arial,Helvetica;-->
+    <!--font-size: 11px;-->
+    <!--font-weight: normal;-->
+    <!--left: 0;-->
+    <!--margin: 10px;-->
+    <!--padding: 5px 8px;-->
+    <!--position: absolute;-->
+    <!--top: 0px;-->
+  <!--}-->
+
+<!--</style>-->
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="rec-obs">
+        <div class="rec-obs-title">
+            <h4>Today's Highs & Lows</h4>
+        </div>
+    <div class="rec-obs-right">
+        <ul class="list-inline">
+            <li>
+                <div class="w-tem">
+                    <h6>Temperature:</h6>
+                    <ul class="list-inline">
+                        <li>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="http://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-thermometer-hot.png" alt="highest temperature recorded today" height="37">
+                                </div>
+                                <div class="media-body-media-middle" style="padding-bottom:5px">
+                                    <h4 style="padding-bottom:5px">32.5°C</h4>
+                                    <p>
+                                        Clementi
+                                        <br>
+                                        10.47 am
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="http://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-thermometer-cold.png"alt="lowest temperature recorded today" height="37">
+                                </div>
+                                <div class="media-body-media-middle" style="padding-bottom:5pax">
+                                    <h4 style="padding-bottom:5px">24.5°C</h4>
+                                    <p>
+                                        Jurong (West)
+                                        <br>
+                                        7.12 am
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="w-tem">
+                    <h6>Rainfall:</h6>
+                    <ul class="list-inline">
+                        <li>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="http://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-rainfall.png" alt="highest rainfall recorded today">
+                                </div>
+                                <div class="media-body media-middle" style="padding-bottom:5px">
+                                    <h4 style="padding-bottom:5px">5.8 mm</h4>
+                                    <p>Jurong Island</p>
+                                    <br>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="w-tem">
+                    <h6>Wind:</h6>
+                    <ul class="list-inline">
+                        <li>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="http://www.weather.gov.sg/wp-content/themes/wiptheme/assets/img/icon-wind-dir-lg-S.png" alt="highest wind recorded today">
+                                </div>
+                                <div class="media-body media-middle">
+                                    <h4 style="padding-bottom:5px">
+                                        N&nbsp;21.9&nbsp;km/h
+                                    </h4>
+                                    <p>Pasir Panjang</p>
+                                    <br>
+                                    <p>7.19am</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        </ul>
+    </div>
+    </div>
+</div>
+</div>
 {% endblock %}
-</body>
