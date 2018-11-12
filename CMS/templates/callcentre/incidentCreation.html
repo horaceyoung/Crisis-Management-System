@@ -40,8 +40,8 @@ function sumbit_sure(){
       return false;
     }
 
-    // Check if caller name is not word-space-word-space
-    if(!name.match(/^[A-Za-z]+$/) && name.indexOf(" ")==(-1)){
+    // Check if caller name is not word-space-word-space-word
+    if(!name.match(/^[A-Za-z\s]+$/) && name.indexOf(" ")!=(-1)){
       alert("Check the CALLER NAME!");
       document.myform.caller_name.focus();
       return false;
@@ -79,7 +79,7 @@ function sumbit_sure(){
     // Check if the category has been selected
     if(category==="Incident Category"){
       console.log("Error!");
-      alert("Check the INCIDENT CATEGORY!");
+      alert("Check the Assistance chosen!");
       document.myform.incident_category.focus();
       return false;
     }
@@ -133,9 +133,9 @@ function sumbit_sure(){
       <option value="Weather">Weather</option>
       <option value="Civil Defense Shelters">Civil Defense Shelters</option>
     </select><br>
-    Incident Category
+    Assistance
     <select id="incident_category" name="incident_category" id="7">
-      <option value="Incident Category">--------Incident Category--------</option>
+      <option value="Incident Category">--------Assistance--------</option>
       <option value="Emergency Ambulance">Emergency Ambulance</option>
       <option value="Rescue and Evacuation">Rescue and Evacuation</option>
       <option value="Fire Fighting">Fire Fighting</option>
