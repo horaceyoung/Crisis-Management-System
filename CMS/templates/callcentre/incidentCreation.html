@@ -15,7 +15,6 @@ function sumbit_sure(){
   var type = document.forms["myform"]["incident_type"].value
   var category = document.forms["myform"]["incident_category"].value
   if(gnl==true){
-
     // Check for all fields filled
     if(name==''){
       alert("The CALLER NAME field cannot be empty!");
@@ -37,12 +36,12 @@ function sumbit_sure(){
 
     if(description==''){
       alert("The description cannot be empty!");
-      document.myform.description.focus();
+      document.forms["myform"]["incident_description"].focus();
       return false;
     }
 
     // Check if caller name is not word-space-word-space
-    if(!name.match(/^[A-Za-z]+$/)){
+    if(!name.match(/^[A-Za-z]+$/) && name.indexOf(" ")==(-1)){
       alert("Check the CALLER NAME!");
       document.myform.caller_name.focus();
       return false;
@@ -54,30 +53,32 @@ function sumbit_sure(){
       return false;
     }
     // Check if incident location contains certain special characters
-    if (location.indexOf('!') != (-1)){
+    if (location.indexOf('!') != (-1)||location.indexOf('@')!=(-1)||
+        location.indexOf('$')!=(-1)||location.indexOf('?')!=(-1)){
       alert("Check the LOCATION!");
       document.myform.incident_location.focus();
       return false;
     }
     // Check if the region has been selected
-    if(region==="--------Incident Region--------"){
+    if(region==="Incident Region"){
       alert("Check the REGION!");
       document.myform.incident_region.focus();
       return false;
     }
     // Check if the type has been selected
-    if(incident_type==="Emergency Situations"||
-       incident_type==="----Natural Hazards----"||
-       incident_type==="----Epidemic----"||
-       incident_type==="----Traffic Accidents----"||
-       incident_type==="----Incidents within Crowded Areas----"||
-       incident_type==="--------Other Useful Information--------"){
+    if(type==="Emergency Situations"||
+       type==="Natural Hazards"||
+       type==="Epidemic"||
+       type==="Traffic Accidents"||
+       type==="Incidents within Crowded Areas"||
+       type==="Other Useful Information"){
       alert("Check the INCIDENT TYPE!");
       document.myform.incident_type.focus();
       return false;
     }
     // Check if the category has been selected
-    if(incident_category==="--------Incident Category--------"){
+    if(category==="Incident Category"){
+      console.log("Error!");
       alert("Check the INCIDENT CATEGORY!");
       document.myform.incident_category.focus();
       return false;
