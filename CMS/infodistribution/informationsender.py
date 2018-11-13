@@ -19,18 +19,11 @@ password = '-?.8JG,/zrazT)x*'
 
 account_sid = "AC911c8d07cb467d8f69f4a933362de87e"
 auth_token  = "63911216647d96067015c43c4f42eac5"
-#Twilio secret code xPRf/eX99ixNY+2Flfq6h4pq8I7UNd2XxwBy1wvW
 
 client = Client(account_sid, auth_token)
 
 
 class InformationSender:
-    """
-    A set of functions acting as an interface to send information through specified media
-
-    Author: Austin Tarango
-    """
-    #Sms will always be sent from +12674788252 to the phoneNumber and with the sms message passed
     def send_sms(self, sms, phoneNumber):
         message = client.messages.create(
             to=phoneNumber,
@@ -41,7 +34,6 @@ class InformationSender:
         print("SMS to " + phoneNumber + " sent.")
         del message
 
-    #email will always be sent from 8paxemailservice@gmail.com with informaiton passed.
     def send_email(self, subject, email, recipient):
         msg = MIMEMultipart()
         msg['From'] = senderEmail

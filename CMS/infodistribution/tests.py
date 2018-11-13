@@ -1,8 +1,6 @@
 from django.test import TestCase
 from .informationdistributor import InformationDistributor
 from .statusreportgenerator import StatusReportGenerator, KeyIndicators
-from .dispatcher import Dispatcher
-from .socialmediaalerter import SocialMediaAlerter
 from callcentre.models import Incident
 from utilities.message import Message
 from utilities.incidentstatus import IncidentStatus
@@ -14,47 +12,20 @@ from django.utils import timezone
 class InformationDistributorTest(TestCase):
     def setUp(self):
         incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=Region.CS.value,
+                             incident_region=Region.CS,
                              incident_category=IncidentType.GAS_LEAK_CONTROL.value,
-                             incident_status=IncidentStatus.NEW.value)
+                             incident_status=IncidentStatus.NEW)
         incident1.save()
-        self.message = Message(incident1.id, IncidentStatus.NEW)
+        self.message = Message(incident1.id, incident1.incident_status)
 
     def test_messages_received(self):
         """Tests that all observers receive the passed message."""
-        infodist = InformationDistributor.get_instance()
+        infodist = InformationDistributor()
         infodist.distribute(self.message)
 
         for observer in infodist.observers:
             self.assertEqual(observer.messages_received, 1, 'Observers should have received exactly 1 message')
 
-class DispatcherTest(TestCase):
-    def setUp(self):
-        incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=Region.NE,
-                             incident_category=IncidentType.RESCUE_AND_EVACUATION.value,
-                             incident_status=IncidentStatus.NEW)
-        incident1.save()
-        self.message = Message(incident1.id, incident1.incident_status)
-
-    def test_receiver(self):
-        dispatch = Dispatcher()
-        dispatch.notify(self.message)
-        self.assertEqual(dispatch.receiver, "SCDF", 'SCDF should have been the receiver')
-
-class SMTest(TestCase):
-    def setUp(self):
-        incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=Region.SE,
-                             incident_category=IncidentType.GAS_LEAK_CONTROL.value,
-                             incident_status=IncidentStatus.RESOLVED)
-        incident1.save()
-        self.message = Message(incident1.id, incident1.incident_status)
-
-    def test_receiver(self):
-        sm = SocialMediaAlerter()
-        sm.notify(self.message)
-        self.assertEqual(sm.sentTo, None, 'South East number should receive the message')
 
 class KeyIndicatorsTest(TestCase):
     def setUp(self):
@@ -130,11 +101,11 @@ class StatusReportGeneratorTest(TestCase):
         self.incident_type = IncidentType.GAS_LEAK_CONTROL
         self.region = Region.CS
         incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=self.region.value,
+                             incident_region=self.region,
                              incident_category=self.incident_type.value,
-                             incident_status=IncidentStatus.NEW.value)
+                             incident_status=IncidentStatus.NEW)
         incident1.save()
-        self.message_new = Message(incident1.id, IncidentStatus.NEW)
+        self.message_new = Message(incident1.id, incident1.incident_status)
         self.message_resolved = Message(incident1.id, IncidentStatus.RESOLVED)
 
     def test_notify(self):

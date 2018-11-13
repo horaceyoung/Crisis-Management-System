@@ -2,28 +2,90 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
+
 <script>
 function sumbit_sure(){
-var gnl=confirm("Confirm to submit?");
-if (gnl==true){
-return true;
-}else{
-return false;
-}
+  var gnl=confirm("Confirm to submit?");
+  var location_check = "!$%^?<>/"
+  var name = document.getElementById("1").value;
+  var mobile_number = document.getElementById("2").value;
+  var location = document.getElementById("3").value;
+
+  console.log(name)
+  if(gnl==true){
+    // Check if caller name are not word-space-word-space
+    if(!name.match(/^[A-Za-z]+$/)){
+      alert("Check the caller name!");
+      return false;
+    }
+    // Check if mobile number are not all numebers
+    if(mobile_number.length!=8 || !(/^\d+$/.test(val)){
+      alert("Check the mobile number!");
+      return false;
+    }
+    // Check if incident location contains certain special characters
+    if (location.indexOf('@') != (-1)){
+      alert("Check the location!");
+      return false;
+    }
+  }  
+  return true;
 }
 </script>
-<div class='container'>
-<h2 style="margin-top:30px;">Create a New Incident</h2>
-  <form action="/incidentCreation"  method="GET" onsubmit="return sumbit_sure()" style="margin-top:30px;">
-    {% for field in form %} 
-    <div class="form-group">
-     {{ field.label_tag }}: {{ field }} {{ field.errors }}
-    </div>
-    {% endfor %} 
-    <div class="form-group">
-    <p><input type="submit" class="btn btn-default" value="Submit"/>
-    </div>
+
+<h1>Create a New Incident</h1>
+  <form action="/incidentCreation"  name = "myform" method="GET" onsubmit="return sumbit_sure()">
+    Caller Name
+    <input type="text" name="caller_name" id="1" style="text-transform:uppercase"/> <br>
+    Mobile Number
+    <input type="text" name="mobile_number" id="2"/> <br>
+    Incident Location
+    <input type="text" name="incident_location" id="3"/> <br>
+    Incident Description
+    <input type="text" name="incident_description"> <br>
+    Region
+    <select id="incident_region" name="incident_region">
+      <option value="North West">North West</option>
+      <option value="Central Singapore">Central Singapore</option>
+      <option value="South East">South East</option>
+      <option value="North East">North East</option>
+    </select><br>
+    Incident Type
+    <select id="incident_type" name="incident_type">
+      <option value="Emergency Situations" >--------Emergency Situations--------</option>
+      <option value="Natural Hazards">----Natural Hazards----</option>
+      <option value="Fire">Fire</option>
+      <option value="Haze">Haze</option>
+      <option value="Tsunami">Tsunami</option>
+      <option value="Typhoon">Typhoon</option>
+      <option value="Earthquake">Earthquake</option>
+      <option value="Earthquake Aftershocks">Earthquake Aftershocks</option>
+      <option value="Epidemic">----Epidemic----</option>
+      <option value="Dengue">Dengue</option>
+      <option value="HIV/AIDS">HIV/AIDS</option>
+      <option value="Bird-flu">Bird-flu</option>
+      <option value="Zika">Zika</option>
+      <option value="Traffic Accidents">----Traffic Accidents----</option>
+      <option value="Single Car Accidents">Single Car Accidents</option>
+      <option value="Two Car Collisions">Two Car Collisions</option>
+      <option value="Multiple Vehicle Pile-up">Multiple Vehicle Pile-up</option>
+      <option value="Incidents within Crowded Areas">----Incidents within Crowded Areas----</option>
+      <option value="Terrorist Attacks">Terrorist Attacks</option>
+      <option value="Mass Shooting">Mass Shooting</option>
+      <option value="Other Useful Information">--------Other Useful Information--------</option>
+      <option value="Weather">Weather</option>
+      <option value="Civil Defense Shelters">Civil Defense Shelters</option>
+    </select><br>
+    Incident Category
+    <select id="incident_category" name="incident_category">
+      <option value="Emergency Ambulance">Emergency Ambulance</option>
+      <option value="Rescue and Evacuation">Rescue and Evacuation</option>
+      <option value="Fire Fighting">Fire Fighting</option>
+      <option value="Gas Leak Control">Gas Leak Control</option>
+    </select><br>
+    <input type="submit" value="Submit"/></div>
   </form>
-    </div>
+
+
 {% endblock %}
 
