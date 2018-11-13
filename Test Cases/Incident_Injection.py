@@ -147,7 +147,7 @@ incident6.save()
 incident7 = Incident()
 incident7.caller_name = 'CHOW JIEMING'
 incident7.mobile_number = '83924892'
-incident7.incident_location = 'Redhill'
+incident7.incident_location = 'NUS'
 incident7.incident_region = 'Central Singapore'
 incident7.incident_category = 'Emergency Ambulance'
 incident7.incident_type ='Single Car Accident'
