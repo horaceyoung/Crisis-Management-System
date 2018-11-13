@@ -7,7 +7,8 @@ from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from utilities.Message import Message
+from utilities.message import Message
+from utilities.incidentstatus import IncidentStatus
 from infodistribution.informationdistributor import InformationDistributor
 
 def incidentCreation(request):

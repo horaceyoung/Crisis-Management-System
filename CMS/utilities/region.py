@@ -11,5 +11,5 @@ class Region(Enum):
     @staticmethod
     def from_str(label):
         for region in Region:
-            if label == str(region):
+            if label == str(region.value):
                 return region
