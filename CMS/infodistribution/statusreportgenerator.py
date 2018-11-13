@@ -11,6 +11,8 @@ class StatusReportGenerator:
     """
     Generates status reports for the prime minister containing key indicators
     and trends (calculated from the key indicators of the previous report).
+
+    Author: Emil Luusua
     """
 
     def __init__(self, interval):
