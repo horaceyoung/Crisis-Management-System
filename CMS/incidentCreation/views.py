@@ -11,15 +11,9 @@ from django.contrib.auth.models import User
 def incidentCreation(request):
 	if request.method=='GET':
 		form = ContactForm2(request.GET)
-		print("The incident creation function is called")	
-		print(form.errors.as_data())
-
 		# form is valid
 		if form.is_valid():
-			print(form.clean())
 			incident = Incident()
-			print(form.is_valid())
-
 			incident.caller_name = form.cleaned_data['caller_name']
 			incident.mobile_number = form.cleaned_data['mobile_number']
 			incident.incident_location = form.cleaned_data['incident_location']
