@@ -7,6 +7,7 @@ from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from infodistribution.informationdistributor import InformationDistributor
 
 def incidentCreation(request):
 	if request.method=='GET':
@@ -27,6 +28,7 @@ def incidentCreation(request):
 			incident.incident_category = form.cleaned_data['incident_category']
 			incident.incident_type = form.cleaned_data['incident_type']
 			incident.incident_description = form.cleaned_data['incident_description']
+
 
 			if incident.incident_category=='Emergency Ambulance':
 				incident.incident_department = 'Singapore Civil Defence Force'
