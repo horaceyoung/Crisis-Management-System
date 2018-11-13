@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ebdf41c-c5a1-4ec5-86a3-b29600d68fd4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base_navi.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_navi.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,24 +60,24 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="9" />
+          <entry key="html" value="11" />
           <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="11" />
           <entry key="Python" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2362" />
+          <entry key="html" value="2440" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2362" />
+          <entry key="HTML" value="2440" />
         </counts>
       </usages-collector>
     </session>
@@ -88,11 +87,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="142" selection-start-line="27" selection-start-column="142" selection-end-line="27" selection-end-column="142" />
+            <state relative-caret-position="75">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_history.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/map/map_home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+              <folding>
+                <element signature="e#177#202#0" expanded="true" />
+                <element signature="e#2764#2782#0" expanded="true" />
+                <element signature="e#9058#9084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,10 +136,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base_navi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+            <state relative-caret-position="105">
+              <caret line="7" column="198" selection-start-line="7" selection-start-column="198" selection-end-line="7" selection-end-column="198" />
               <folding>
                 <element signature="e#2366#2372#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,7 +194,6 @@
         <option value="$PROJECT_DIR$/infodistribution/incidentsubject.py" />
         <option value="$PROJECT_DIR$/infodistribution/urls.py" />
         <option value="$PROJECT_DIR$/infodistribution/views.py" />
-        <option value="$PROJECT_DIR$/templates/callcentre/callcentre_history.html" />
         <option value="$PROJECT_DIR$/department/urls.py" />
         <option value="$PROJECT_DIR$/CMS/CMS/CMS/urls.py" />
         <option value="$PROJECT_DIR$/statusTrack/tests.py" />
@@ -178,7 +204,6 @@
         <option value="$PROJECT_DIR$/django_google_maps/static/django_google_maps/js/google-maps-admin.js" />
         <option value="$PROJECT_DIR$/statusTrack/admin.py" />
         <option value="$PROJECT_DIR$/map/views.py" />
-        <option value="$PROJECT_DIR$/templates/map/map_home.html" />
         <option value="$PROJECT_DIR$/templates/callcentre/incidentCreation.html" />
         <option value="$PROJECT_DIR$/statusTrack/urls.py" />
         <option value="$PROJECT_DIR$/statusTrack/apps.py" />
@@ -197,11 +222,13 @@
         <option value="$PROJECT_DIR$/CMS/urls.py" />
         <option value="$PROJECT_DIR$/CMS/urls.py" />
         <option value="$PROJECT_DIR$/templates/statustrack/statusCreation_home.html" />
-        <option value="$PROJECT_DIR$/templates/callcentre/callcentre_home.html" />
-        <option value="$PROJECT_DIR$/templates/callcentre/callcentre_home.html" />
         <option value="$PROJECT_DIR$/statusTrack/views.py" />
         <option value="$PROJECT_DIR$/templates/statustrack/detail.html" />
         <option value="$PROJECT_DIR$/statusCreation/views.py" />
+        <option value="$PROJECT_DIR$/templates/callcentre/callcentre_home.html" />
+        <option value="$PROJECT_DIR$/templates/callcentre/callcentre_home.html" />
+        <option value="$PROJECT_DIR$/templates/callcentre/callcentre_history.html" />
+        <option value="$PROJECT_DIR$/templates/map/map_home.html" />
         <option value="$PROJECT_DIR$/templates/base_navi.html" />
       </list>
     </option>
@@ -220,7 +247,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -509,7 +536,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32959184" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32959184" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32959184" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -521,6 +548,30 @@
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="5" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14224665" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286334" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32959184" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32959184" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="5" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -713,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/map/map_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2308">
-          <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/callcentre/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -746,21 +790,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="142" selection-start-line="27" selection-start-column="142" selection-end-line="27" selection-end-column="142" />
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/callcentre/callcentre_history.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/map/map_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="72" column="71" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+          <folding>
+            <element signature="e#177#202#0" expanded="true" />
+            <element signature="e#2764#2782#0" expanded="true" />
+            <element signature="e#9058#9084#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base_navi.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        <state relative-caret-position="105">
+          <caret line="7" column="198" selection-start-line="7" selection-start-column="198" selection-end-line="7" selection-end-column="198" />
           <folding>
             <element signature="e#2366#2372#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
