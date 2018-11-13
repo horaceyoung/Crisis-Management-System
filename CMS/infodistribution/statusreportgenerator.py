@@ -11,6 +11,8 @@ class StatusReportGenerator:
     """
     Generates status reports for the prime minister containing key indicators
     and trends (calculated from the key indicators of the previous report).
+
+    Author: Emil Luusua
     """
 
     def __init__(self, interval):
@@ -36,12 +38,12 @@ class StatusReportGenerator:
         if message.incident_status == IncidentStatus.NEW:
             self.key_indicators.reported_incidents[incident_type] += 1
             self.key_indicators.affected_regions[region] += 1
-            self.key_indicators.number_of_ongoing_incidents += 1
+            KeyIndicators.number_of_ongoing_incidents += 1
         elif message.incident_status == IncidentStatus.RESOLVED:
             self.key_indicators.total_resolution_time +=\
                 (timezone.now() - incident.incident_time).total_seconds() / 60
             self.key_indicators.number_of_resolved_incidents += 1
-            self.key_indicators.number_of_ongoing_incidents -= 1
+            KeyIndicators.number_of_ongoing_incidents -= 1
 
     def generate_report(self):
         """
@@ -96,7 +98,7 @@ class KeyIndicators:
         """
         Calculates the number of incidents which have not yet been resolved.
         """
-        return 'Number of incidents which are still ongoing: ' + str(self.number_of_ongoing_incidents) + '.'
+        return 'Number of incidents which are still ongoing: ' + str(KeyIndicators.number_of_ongoing_incidents) + '.'
 
     def mean_resolution_time(self):
         """
@@ -136,8 +138,8 @@ class KeyIndicators:
         best_derivative = 0
         best_key = None
         for key in keys:
-            if dict2[key] - dict1[key] > best_derivative:
-                best_derivative = dict2[key] - dict1[key]
+            if dict1[key] - dict2[key] > best_derivative:
+                best_derivative = dict1[key] - dict2[key]
                 best_key = key
 
         return best_key, best_derivative

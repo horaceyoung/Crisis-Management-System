@@ -4,6 +4,11 @@ from utilities.incidentstatus import IncidentStatus
 from utilities.incidenttype import IncidentType
 from utilities.region import Region
 from django.utils import timezone
+from datetime import datetime
+import pytz
+
+tz = pytz.timezone("Asia/Singapore")
+timezone.activate(pytz.timezone("Asia/Singapore"))
 
 REGION_CHOICES = [
     ("North West","North West"),
@@ -54,13 +59,13 @@ STATUS_UPDATE = [
 class Incident(models.Model):
     caller_name = models.CharField(max_length=50, default='NULL',blank=True)
     mobile_number = models.CharField(max_length=8, default='NULL',blank=True)
-    incident_time = models.DateTimeField(default=timezone.now)
+    incident_time = models.DateTimeField(default=timezone.now())
     incident_location = models.CharField(max_length=100, default='NULL',blank=True)
     incident_department = models.CharField(max_length=100, default='NULL')
-    incident_region = models.CharField(max_length=100, default='NULL')
+    incident_region = models.CharField(max_length=100, choices=REGION_CHOICES, default='NULL')
     incident_category = models.CharField(max_length=100, default='NULL')
     incident_type = models.CharField(max_length=100, default='NULL')
-    incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='NEW')
+    incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='New')
 #   incident_status = models.CharField(max_length=100, choices=[(tag, tag.value) for tag in IncidentStatus], default='New')
     incident_description = models.CharField(max_length=200, default='NULL',blank=True)
 
