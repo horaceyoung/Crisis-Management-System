@@ -3,7 +3,7 @@ from enum import Enum
 
 class IncidentType(Enum):
     EMERGENCY_AMBULANCE = "Emergency Ambulance"
-    RESCUE_AND_EVACUATION = "Rescue & Evacuation"
+    RESCUE_AND_EVACUATION = "Rescue and Evacuation"
     FIRE_FIGHTING = "Fire Fighting"
     GAS_LEAK_CONTROL = "Gas Leak Control"
 
