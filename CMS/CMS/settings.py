@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'map',
     'callcentre',
     'incidentCreation',
-    'statusTrack',
     'django_google_maps'
 ]
 
