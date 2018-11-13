@@ -138,8 +138,8 @@ class KeyIndicators:
         best_derivative = 0
         best_key = None
         for key in keys:
-            if dict2[key] - dict1[key] > best_derivative:
-                best_derivative = dict2[key] - dict1[key]
+            if dict1[key] - dict2[key] > best_derivative:
+                best_derivative = dict1[key] - dict2[key]
                 best_key = key
 
         return best_key, best_derivative
