@@ -16,7 +16,7 @@ return false;
 <h3>{{ incident }}</h3>
 <h1></h1>
 
-<table class="table table-bordered" style="width:100%">
+<table class="table table-striped" style="width:100%">
   <tr>
     <th>Incident ID</th>
     <th>Type</th>
@@ -36,11 +36,12 @@ return false;
   </tr>
 </table>
 
-  <form action=""  method="POST">
+  <form action=""  method="POST" style="font-size:18px;">
       {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Save"/>
-
+    <br>
+    <input type="submit" value="Save" class="btn btn-default" style="margin-top:20px;font-size:15px;"/>
+      <a class="btn btn-default" href="{% url 'statusCreation:index' %}" role="button" style="margin-top:20px;font-size:15px;">Back</a>
   </form>
 
 

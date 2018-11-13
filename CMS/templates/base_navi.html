@@ -6,8 +6,41 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .row.content {
+        height: 100vh;}
+
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height:100vh;
+    }
+        footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+            /*position:fixed;*/
+            /*bottom:0;*/
+            /*width:100%;*/
+            margin-top:40px;
+    }
+
+
+         @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -32,18 +65,36 @@
                     </a>
                 </li>
             </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Log off
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
 </nav>
+
+<div style="margin: 0 auto;width:75%;">
 {% block body %}
 {% endblock %}
+</div>
+<div>
+<footer id="footer" class="page-footer unique-color-dark mt-4" >
+   <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1" href="https://twitter.com/8Pax1?lang=en">
+            <i class="fa fa-twitter" style="font-size:15px;color:white">  Twitter</i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <div class="footer-copyright py-3 text-center" style="font-size:15px;">
+        © 2018 Copyright: 8pax Development Team
+    </div>
+</footer>
+     </div>
 </body>
 </html>

@@ -7,6 +7,9 @@ from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from utilities.message import Message
+from utilities.incidentstatus import IncidentStatus
+from infodistribution.informationdistributor import InformationDistributor
 
 def incidentCreation(request):
 	if request.method=='GET':
@@ -21,14 +24,13 @@ def incidentCreation(request):
 			print(form.is_valid())
 
 			incident.caller_name = form.cleaned_data['caller_name']
-
-			# incident.caller_name = ContactForm2.clean_caller_name[form]
 			incident.mobile_number = form.cleaned_data['mobile_number']
 			incident.incident_location = form.cleaned_data['incident_location']
 			incident.incident_region = form.cleaned_data['incident_region']
 			incident.incident_category = form.cleaned_data['incident_category']
 			incident.incident_type = form.cleaned_data['incident_type']
 			incident.incident_description = form.cleaned_data['incident_description']
+
 
 			if incident.incident_category=='Emergency Ambulance':
 				incident.incident_department = 'Singapore Civil Defence Force'
@@ -40,6 +42,11 @@ def incidentCreation(request):
 				incident.incident_department = 'Singapore Power'
 				
 			incident.save()
+
+			message = Message(incident.id, IncidentStatus.NEW)
+			info_dist = InformationDistributor.get_instance()
+			info_dist.distribute(message)
+
 			# print("A new incident is saved\n\n\n\n")
 			# print(incident.errors.as_json())
 			# return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

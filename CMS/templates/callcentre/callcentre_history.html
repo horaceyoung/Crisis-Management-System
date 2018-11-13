@@ -1,8 +1,8 @@
 {% extends 'base_navi.html' %}
 
 {% block body %}
-<h1>Here list all the resolved incidents</h1>
-<table class="table table-bordered" style="width:100%">
+<h2>Here list all the resolved incidents</h2>
+<table class="table table-striped" style="width:100%">
   <tr>
     <th>Incident ID</th>
     <th>Type</th>
@@ -20,5 +20,5 @@
   </tr>
     {% endfor %}
 </table>
-<a class="btn btn-default" href="{% url 'callcentre:callcentre_home' %}" role="button">Back</a>
+<a class="btn btn-default" href="{% url 'callcentre:callcentre_home' %}" role="button" style="margin-bottom:20px;">Back</a>
 {% endblock %}

@@ -6,52 +6,110 @@
 <script>
 function sumbit_sure(){
   var gnl=confirm("Confirm to submit?");
-  var location_check = "!$%^?<>/"
-  var name = document.getElementById("1").value;
-  var mobile_number = document.getElementById("2").value;
-  var location = document.getElementById("3").value;
 
-  console.log(name)
+  var name = document.forms["myform"]["caller_name"].value
+  var mobile_number = document.forms["myform"]["mobile_number"].value
+  var location = document.forms["myform"]["incident_location"].value
+  var description = document.forms["myform"]["incident_description"].value
+  var region = document.forms["myform"]["incident_region"].value
+  var type = document.forms["myform"]["incident_type"].value
+  var category = document.forms["myform"]["incident_category"].value
   if(gnl==true){
-    // Check if caller name are not word-space-word-space
-    if(!name.match(/^[A-Za-z]+$/)){
-      alert("Check the caller name!");
+    // Check for all fields filled
+    if(name==''){
+      alert("The CALLER NAME field cannot be empty!");
+      document.forms["myform"]["caller_name"].focus();
+      return false;
+    }
+
+    if(mobile_number==''){
+      alert("The MOBILT NUMBER cannot be empty!");
+      document.myform.mobile_number.focus();
+      return false;
+    }
+
+    if(location==''){
+      alert("The LOCATION cannot be empty!");
+      document.myform.location.focus();
+      return false;
+    }
+
+    if(description==''){
+      alert("The description cannot be empty!");
+      document.forms["myform"]["incident_description"].focus();
+      return false;
+    }
+
+    // Check if caller name is not word-space-word-space-word
+    if(!name.match(/^[A-Za-z\s]+$/) && name.indexOf(" ")!=(-1)){
+      alert("Check the CALLER NAME!");
+      document.myform.caller_name.focus();
       return false;
     }
     // Check if mobile number are not all numebers
-    if(mobile_number.length!=8 || !(/^\d+$/.test(val)){
-      alert("Check the mobile number!");
+    if(mobile_number.length!=8 || !mobile_number.match(/^[0-9]+$/)){
+      alert("Check the MOBILE NUMBER!");
+      document.myform.mobile_number.focus();
       return false;
     }
     // Check if incident location contains certain special characters
-    if (location.indexOf('@') != (-1)){
-      alert("Check the location!");
+    if (location.indexOf('!') != (-1)||location.indexOf('@')!=(-1)||
+        location.indexOf('$')!=(-1)||location.indexOf('?')!=(-1)){
+      alert("Check the LOCATION!");
+      document.myform.incident_location.focus();
       return false;
     }
-  }  
-  return true;
+    // Check if the region has been selected
+    if(region==="Incident Region"){
+      alert("Check the REGION!");
+      document.myform.incident_region.focus();
+      return false;
+    }
+    // Check if the type has been selected
+    if(type==="Emergency Situations"||
+       type==="Natural Hazards"||
+       type==="Epidemic"||
+       type==="Traffic Accidents"||
+       type==="Incidents within Crowded Areas"||
+       type==="Other Useful Information"){
+      alert("Check the INCIDENT TYPE!");
+      document.myform.incident_type.focus();
+      return false;
+    }
+    // Check if the category has been selected
+    if(category==="Incident Category"){
+      console.log("Error!");
+      alert("Check the Assistance chosen!");
+      document.myform.incident_category.focus();
+      return false;
+    }
+    return true;
+  } 
+  return false;
 }
 </script>
 
-<h1>Create a New Incident</h1>
-  <form action="/incidentCreation"  name = "myform" method="GET" onsubmit="return sumbit_sure()">
+<h2>Create a New Incident</h2>
+<div style="width:97%;margin: 0 auto;">
+  <form action="/incidentCreation" class="form-group row" name = "myform" method="GET" onsubmit="return sumbit_sure()" style="font-size:15px;">
     Caller Name
-    <input type="text" name="caller_name" id="1" style="text-transform:uppercase"/> <br>
+    <input type="text" class="form-control" name="caller_name" id="1" placeholder="Enter caller name..." style="text-transform:uppercase;"/> <br>
     Mobile Number
-    <input type="text" name="mobile_number" id="2"/> <br>
+    <input type="text" class="form-control" name="mobile_number" id="2" placeholder="Enter mobile number..."/> <br>
     Incident Location
-    <input type="text" name="incident_location" id="3"/> <br>
+    <input type="text" class="form-control" name="incident_location" id="3" placeholder="Enter incident location..."/> <br>
     Incident Description
-    <input type="text" name="incident_description"> <br>
+    <input type="text" class="form-control" name="incident_description" id="4" placeholder="Enter incident description..."/> <br>
     Region
-    <select id="incident_region" name="incident_region">
+    <select id="incident_region" name="incident_region" id="5" style="margin-left:10px;">
+      <option value="Incident Region">--------Incident Region--------</option>
       <option value="North West">North West</option>
       <option value="Central Singapore">Central Singapore</option>
       <option value="South East">South East</option>
       <option value="North East">North East</option>
     </select><br>
     Incident Type
-    <select id="incident_type" name="incident_type">
+    <select id="incident_type" name="incident_type" id="6" style="margin-top:20px;margin-left:10px;">
       <option value="Emergency Situations" >--------Emergency Situations--------</option>
       <option value="Natural Hazards">----Natural Hazards----</option>
       <option value="Fire">Fire</option>
@@ -76,16 +134,17 @@ function sumbit_sure(){
       <option value="Weather">Weather</option>
       <option value="Civil Defense Shelters">Civil Defense Shelters</option>
     </select><br>
-    Incident Category
-    <select id="incident_category" name="incident_category">
+    Assistance
+    <select id="incident_category" name="incident_category" id="7">
+      <option value="Incident Category">--------Assistance--------</option>
       <option value="Emergency Ambulance">Emergency Ambulance</option>
       <option value="Rescue and Evacuation">Rescue and Evacuation</option>
       <option value="Fire Fighting">Fire Fighting</option>
       <option value="Gas Leak Control">Gas Leak Control</option>
     </select><br>
-    <input type="submit" value="Submit"/></div>
+    <input type="submit" value="Submit" class="btn btn-default" style="font-size:15px;margin-top:20px;"/>
+<a class="btn btn-default" href="{% url 'callcentre:callcentre_home' %}" role="button" style="margin-top:20px;font-size:15px;">Back</a>
   </form>
-
-
+</div>
 {% endblock %}
 
