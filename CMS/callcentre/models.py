@@ -57,7 +57,7 @@ class Incident(models.Model):
     incident_time = models.DateTimeField(default=timezone.now)
     incident_location = models.CharField(max_length=100, default='NULL',blank=True)
     incident_department = models.CharField(max_length=100, default='NULL')
-    incident_region = models.CharField(max_length=100, default='NULL')
+    incident_region = models.CharField(max_length=100, choices=REGION_CHOICES, default='NULL')
     incident_category = models.CharField(max_length=100, default='NULL')
     incident_type = models.CharField(max_length=100, default='NULL')
     incident_status = models.CharField(max_length=100, choices=STATUS_UPDATE, default='New')

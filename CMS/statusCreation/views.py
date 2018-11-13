@@ -14,6 +14,7 @@ from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from utilities.message import Message
+from utilities.incidentstatus import IncidentStatus
 from infodistribution.informationdistributor import InformationDistributor
 
 from django.views.generic import TemplateView
@@ -45,6 +46,11 @@ def detail(request, incident_id):
                 incident = Incident.objects.get(id=incident_id)
                 incident.incident_status = form.cleaned_data['incident_status']
                 incident.save()
+
+                message = Message(incident.id, IncidentStatus.from_str(incident.incident_status))
+                info_dist = InformationDistributor.get_instance()
+                info_dist.distribute(message)
+
                 context = {'form': form, 'incident': incident}
                 return render(request, 'statustrack/detail.html', context)
         else:
@@ -66,7 +72,6 @@ def statusTrack(request):
             incident = Incident.objects.get(id=5)
             incident.incident_status = form.cleaned_data['incident_status']
             incident.save()
-
 
             message = Message(incident.id, IncidentStatus.from_str(incident.incident_status))
             info_dist = InformationDistributor.get_instance()
