@@ -31,9 +31,9 @@ class InformationDistributorTest(TestCase):
 class DispatcherTest(TestCase):
     def setUp(self):
         incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=Region.NE,
+                             incident_region=Region.NE.value,
                              incident_category=IncidentType.RESCUE_AND_EVACUATION.value,
-                             incident_status=IncidentStatus.NEW)
+                             incident_status=IncidentStatus.NEW.value)
         incident1.save()
         self.message = Message(incident1.id, incident1.incident_status)
 
@@ -45,9 +45,9 @@ class DispatcherTest(TestCase):
 class SMTest(TestCase):
     def setUp(self):
         incident1 = Incident(incident_time=timezone.now(),
-                             incident_region=Region.SE,
+                             incident_region=Region.SE.value,
                              incident_category=IncidentType.GAS_LEAK_CONTROL.value,
-                             incident_status=IncidentStatus.RESOLVED)
+                             incident_status=IncidentStatus.RESOLVED.value)
         incident1.save()
         self.message = Message(incident1.id, incident1.incident_status)
 
@@ -75,7 +75,7 @@ class KeyIndicatorsTest(TestCase):
         # Two incidents are resolved
         self.key_indicators.number_of_resolved_incidents = 2
         # => Eight incidents are ongoing
-        self.key_indicators.number_of_ongoing_incidents = 8
+        KeyIndicators.number_of_ongoing_incidents = 8
 
         # First one in 20 minutes
         self.key_indicators.total_resolution_time += 20.0

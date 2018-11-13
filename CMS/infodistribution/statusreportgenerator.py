@@ -38,12 +38,12 @@ class StatusReportGenerator:
         if message.incident_status == IncidentStatus.NEW:
             self.key_indicators.reported_incidents[incident_type] += 1
             self.key_indicators.affected_regions[region] += 1
-            self.key_indicators.number_of_ongoing_incidents += 1
+            KeyIndicators.number_of_ongoing_incidents += 1
         elif message.incident_status == IncidentStatus.RESOLVED:
             self.key_indicators.total_resolution_time +=\
                 (timezone.now() - incident.incident_time).total_seconds() / 60
             self.key_indicators.number_of_resolved_incidents += 1
-            self.key_indicators.number_of_ongoing_incidents -= 1
+            KeyIndicators.number_of_ongoing_incidents -= 1
 
     def generate_report(self):
         """
@@ -98,7 +98,7 @@ class KeyIndicators:
         """
         Calculates the number of incidents which have not yet been resolved.
         """
-        return 'Number of incidents which are still ongoing: ' + str(self.number_of_ongoing_incidents) + '.'
+        return 'Number of incidents which are still ongoing: ' + str(KeyIndicators.number_of_ongoing_incidents) + '.'
 
     def mean_resolution_time(self):
         """
