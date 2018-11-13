@@ -65,6 +65,22 @@ if("{{incident.incident_type}}" == String(category)){
     }
 </script>
 {% endfor %}
+<script>
+var category = localStorage.getItem("category");
+    if(String(category) == "Civil Defense Shelters")
+    {
+        locationlist.push("Jurong East");
+        locationlist.push("Dhoby Ghaut");
+        locationlist.push("Bukit Panjang");
+        locationlist.push("Punggol");
+        locationlist.push("Sengkang");
+        locationlist.push("Pasir Ris");
+        locationlist.push("Yishun");
+        locationlist.push("Ang Mo Kio");
+        locationlist.push("Tuas");
+        locationlist.push("Boon Lay");
+    }
+</script>
 {{form.media}}
 
 
