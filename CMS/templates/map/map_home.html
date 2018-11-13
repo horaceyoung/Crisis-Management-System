@@ -66,19 +66,20 @@ if("{{incident.incident_type}}" == String(category)){
 </script>
 {% endfor %}
 <script>
-// this script is to populate the table based on the selected category
-    var category = localStorage.getItem("category");
-    var $table = $('#display_table');
-    if("{{incident.incident_type}}" == String(category)){
-         $table.append('<tr>' +
-                                        '<th>' + '{{incident.incident_type}}' + '</th>' +
-                                        '<th>' + '{{incident.incident_location}}' + '</th>' +
-                                        '<th>' + '{{incident.incident_department}}' + '</th>' +
-                                        '<th>' + '{{incident.incident_region}}' + '</th>' +
-                                        '<th>' + '{{incident.incident_status}}' + '</th>' +
-                                        '<th>' + '{{incident.incident_description}}' + '</th>' +
-                                        '</tr>'
-                                        );
+var category = localStorage.getItem("category");
+    if(String(category) == "Civil Defense Shelters")
+    {
+        locationlist.push("Jurong East");
+        locationlist.push("Dhoby Ghaut");
+        locationlist.push("Bukit Panjang");
+        locationlist.push("Punggol");
+        locationlist.push("Sengkang");
+        locationlist.push("Pasir Ris");
+        locationlist.push("Yishun");
+        locationlist.push("Ang Mo Kio");
+        locationlist.push("Tuas");
+        locationlist.push("Redhill");
+        locationlist.push("Boon Lay");
     }
 </script>
 {{form.media}}
