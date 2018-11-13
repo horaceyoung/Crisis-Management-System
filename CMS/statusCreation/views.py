@@ -15,7 +15,6 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
 from django.views.generic import TemplateView
-from statusTrack.forms import StatusForm
 from flask import Flask
 from flask import request
 
