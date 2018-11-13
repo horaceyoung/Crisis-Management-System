@@ -7,6 +7,7 @@ from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from utilities.Message import Message
 from infodistribution.informationdistributor import InformationDistributor
 
 def incidentCreation(request):
@@ -40,6 +41,11 @@ def incidentCreation(request):
 				incident.incident_department = 'Singapore Power'
 				
 			incident.save()
+
+			message = Message(incident.id, IncidentStatus.NEW)
+			info_dist = InformationDistributor.get_instance()
+			info_dist.distribute(message)
+
 			# print("A new incident is saved\n\n\n\n")
 			# print(incident.errors.as_json())
 			# return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
