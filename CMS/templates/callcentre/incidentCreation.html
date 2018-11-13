@@ -89,18 +89,19 @@ function sumbit_sure(){
 }
 </script>
 
-<h1>Create a New Incident</h1>
-  <form action="/incidentCreation"  name = "myform" method="GET" onsubmit="return sumbit_sure()">
+<h2>Create a New Incident</h2>
+<div style="width:97%;margin: 0 auto;">
+  <form action="/incidentCreation" class="form-group row" name = "myform" method="GET" onsubmit="return sumbit_sure()" style="font-size:15px;">
     Caller Name
-    <input type="text" name="caller_name" id="1" style="text-transform:uppercase"/> <br>
+    <input type="text" class="form-control" name="caller_name" id="1" placeholder="Enter caller name..." style="text-transform:uppercase;"/> <br>
     Mobile Number
-    <input type="text" name="mobile_number" id="2"/> <br>
+    <input type="text" class="form-control" name="mobile_number" id="2" placeholder="Enter mobile number..."/> <br>
     Incident Location
-    <input type="text" name="incident_location" id="3"/> <br>
+    <input type="text" class="form-control" name="incident_location" id="3" placeholder="Enter incident location..."/> <br>
     Incident Description
-    <input type="text" name="incident_description" id="4"> <br>
+    <input type="text" class="form-control" name="incident_description" id="4" placeholder="Enter incident description..."/> <br>
     Region
-    <select id="incident_region" name="incident_region" id="5">
+    <select id="incident_region" name="incident_region" id="5" style="margin-left:10px;">
       <option value="Incident Region">--------Incident Region--------</option>
       <option value="North West">North West</option>
       <option value="Central Singapore">Central Singapore</option>
@@ -108,7 +109,7 @@ function sumbit_sure(){
       <option value="North East">North East</option>
     </select><br>
     Incident Type
-    <select id="incident_type" name="incident_type" id="6">
+    <select id="incident_type" name="incident_type" id="6" style="margin-top:20px;margin-left:10px;">
       <option value="Emergency Situations" >--------Emergency Situations--------</option>
       <option value="Natural Hazards">----Natural Hazards----</option>
       <option value="Fire">Fire</option>
@@ -141,8 +142,8 @@ function sumbit_sure(){
       <option value="Fire Fighting">Fire Fighting</option>
       <option value="Gas Leak Control">Gas Leak Control</option>
     </select><br>
-    <input type="submit" value="Submit"/></div>
+    <input type="submit" value="Submit" class="btn btn-default" style="font-size:15px;margin-top:20px;"/></div>
   </form>
-
+</div>
 {% endblock %}
 
