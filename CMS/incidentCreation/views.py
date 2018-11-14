@@ -24,7 +24,7 @@ def incidentCreation(request):
 			incident.incident_category = form.cleaned_data['incident_category']
 			incident.incident_type = form.cleaned_data['incident_type']
 			incident.incident_description = form.cleaned_data['incident_description']
-
+			incident.incident_time = timezone.now()
 
 			if incident.incident_category=='Emergency Ambulance':
 				incident.incident_department = 'Singapore Civil Defence Force'
@@ -34,7 +34,7 @@ def incidentCreation(request):
 				incident.incident_department = 'Singapore Civil Defence Force'
 			if incident.incident_category=='Gas Leak Control':
 				incident.incident_department = 'Singapore Power'
-				
+			
 			incident.save()
 
 			message = Message(incident.id, IncidentStatus.NEW)
