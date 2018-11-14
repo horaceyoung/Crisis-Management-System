@@ -41,7 +41,7 @@ function sumbit_sure(){
     }
 
     // Check if caller name is not word-space-word-space-word
-    if(!name.match(/^[A-Za-z\s]+$/) && name.indexOf(" ")!=(-1)){
+    if(!name.match(/^[A-Za-z\s]+$/)){
       alert("Check the CALLER NAME!");
       document.myform.caller_name.focus();
       return false;

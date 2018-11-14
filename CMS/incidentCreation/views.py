@@ -14,15 +14,9 @@ from infodistribution.informationdistributor import InformationDistributor
 def incidentCreation(request):
 	if request.method=='GET':
 		form = ContactForm2(request.GET)
-		print("The incident creation function is called")	
-		print(form.errors.as_data())
-
 		# form is valid
 		if form.is_valid():
-			print(form.clean())
 			incident = Incident()
-			print(form.is_valid())
-
 			incident.caller_name = form.cleaned_data['caller_name']
 			incident.mobile_number = form.cleaned_data['mobile_number']
 			incident.incident_location = form.cleaned_data['incident_location']
@@ -30,7 +24,7 @@ def incidentCreation(request):
 			incident.incident_category = form.cleaned_data['incident_category']
 			incident.incident_type = form.cleaned_data['incident_type']
 			incident.incident_description = form.cleaned_data['incident_description']
-
+			incident.incident_time = timezone.now()
 
 			if incident.incident_category=='Emergency Ambulance':
 				incident.incident_department = 'Singapore Civil Defence Force'
@@ -40,7 +34,7 @@ def incidentCreation(request):
 				incident.incident_department = 'Singapore Civil Defence Force'
 			if incident.incident_category=='Gas Leak Control':
 				incident.incident_department = 'Singapore Power'
-				
+			
 			incident.save()
 
 			message = Message(incident.id, IncidentStatus.NEW)
