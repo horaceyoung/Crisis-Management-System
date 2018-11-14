@@ -5,10 +5,6 @@ from utilities.incidenttype import IncidentType
 from utilities.region import Region
 from django.utils import timezone
 from datetime import datetime
-import pytz
-
-tz = pytz.timezone("Asia/Singapore")
-timezone.activate(pytz.timezone("Asia/Singapore"))
 
 REGION_CHOICES = [
     ("North West","North West"),
